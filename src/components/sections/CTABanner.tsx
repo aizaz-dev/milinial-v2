@@ -12,14 +12,14 @@ interface Props {
 
 export default function CTABanner({ heading, subheading, image }: Props) {
   return (
-    <section className="w-full py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="w-full bg-white pt-20 pb-14">
+      <div className="max-w-[1200px] mx-auto px-6">
 
-        {/* MAIN CONTAINER */}
-        <div className="relative bg-[#f2f2f2] rounded-xl overflow-hidden pt-24 pb-16">
+        {/* Banner */}
+        <div className="relative bg-[#f6f6f6] rounded-xl overflow-hidden py-20">
 
-          {/* LEFT IMAGE */}
-          <div className="absolute left-16 bottom-0 hidden lg:block z-20">
+          {/* People image */}
+          <div className="absolute left-14 bottom-0 z-20">
             <Image
               src={image}
               alt="team"
@@ -29,60 +29,72 @@ export default function CTABanner({ heading, subheading, image }: Props) {
             />
           </div>
 
-          {/* PURPLE CONTENT CARD */}
-          <div className="relative ml-auto lg:ml-[420px] mr-12 bg-gradient-to-r from-[#7C73F6] to-[#9187F9] rounded-xl px-16 py-16 text-white max-w-3xl shadow-lg">
+          {/* Purple content card */}
+          <div className="ml-auto max-w-[760px] pr-8">
+            <div className="bg-gradient-to-r from-[#7d74f5] to-[#8e86f7] text-white 
+              rounded-tl-[26px] rounded-tr-[12px] rounded-br-[12px] rounded-bl-[12px]
+              px-16 py-14 shadow-sm">
 
-            <h2 className="text-3xl lg:text-4xl font-semibold leading-snug mb-6">
-              {heading}
-            </h2>
+              <h2 className="text-[34px] leading-tight font-semibold mb-6 max-w-[520px]">
+                {heading}
+              </h2>
 
-            <p className="text-white/90 text-[15px] leading-relaxed mb-8 max-w-xl">
-              {subheading}
-            </p>
+              <p className="text-[15px] text-white/90 leading-relaxed mb-8 max-w-[540px]">
+                {subheading}
+              </p>
 
-            {/* BUTTONS */}
-            <div className="flex gap-4">
+              <div className="flex gap-4">
 
-              <Link
-                href="#"
-                className="flex items-center gap-3 bg-[#2F2AA3] hover:bg-[#221c7c] px-6 py-3 rounded-lg font-medium transition"
-              >
-                Leistungen ansehen
-                <span className="flex items-center justify-center w-6 h-6 bg-white/20 rounded">
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
+                {/* Button 1 */}
+                <Link
+                  href="#"
+                  className="flex items-center gap-3 bg-[#2c2aa2] hover:bg-[#24218c]
+                  px-6 py-3 rounded-lg text-sm font-medium transition"
+                >
+                  Leistungen ansehen
 
-              <Link
-                href="#"
-                className="flex items-center gap-3 border border-white/40 px-6 py-3 rounded-lg hover:bg-white/10 transition"
-              >
-                Angebot anfragen
-                <span className="flex items-center justify-center w-6 h-6 bg-white/20 rounded">
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
+                  <span className="flex items-center justify-center 
+                    w-6 h-6 bg-white rounded-md text-[#2c2aa2]">
+                    <ArrowRight size={14} />
+                  </span>
+                </Link>
 
+                {/* Button 2 */}
+                <Link
+                  href="#"
+                  className="flex items-center gap-3 border border-white/40
+                  px-6 py-3 rounded-lg text-sm hover:bg-white/10 transition"
+                >
+                  Angebot anfragen
+
+                  <span className="flex items-center justify-center
+                    w-6 h-6 bg-white/20 rounded-md">
+                    <ArrowRight size={14} />
+                  </span>
+                </Link>
+
+              </div>
             </div>
           </div>
 
-          {/* BOTTOM BLUE LINE */}
-          <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[#1DA1F2]" />
+          {/* Bottom blue line */}
+          <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[#22a7ff]" />
+
         </div>
 
-        {/* LOGOS SECTION */}
-        <div className="mt-12 border-t border-gray-200 pt-8 flex flex-wrap items-center gap-10 opacity-70">
+        {/* Logos section */}
+        <div className="mt-10 border-t border-gray-200 pt-8 flex items-center flex-wrap gap-12 opacity-70">
 
-          <span className="text-sm text-gray-500 mr-6">
+          <span className="text-sm text-gray-500 whitespace-nowrap">
             Mitglied von:
           </span>
 
-          <Image src="/logos/sogi.png" alt="logo" width={120} height={40}/>
-          <Image src="/logos/university.png" alt="logo" width={120} height={40}/>
-          <Image src="/logos/ehl.png" alt="logo" width={100} height={40}/>
-          <Image src="/logos/interim.png" alt="logo" width={120} height={40}/>
-          <Image src="/logos/procure.png" alt="logo" width={120} height={40}/>
-          <Image src="/logos/schkg.png" alt="logo" width={120} height={40}/>
+          <Image src="/logos/sogi.png" alt="SOGI" width={110} height={40} />
+          <Image src="/logos/university.png" alt="HSG" width={120} height={40} />
+          <Image src="/logos/ehl.png" alt="EHL" width={90} height={40} />
+          <Image src="/logos/interim.png" alt="Interim" width={110} height={40} />
+          <Image src="/logos/procure.png" alt="Procure" width={110} height={40} />
+          <Image src="/logos/schkg.png" alt="SCHKG" width={110} height={40} />
 
         </div>
 

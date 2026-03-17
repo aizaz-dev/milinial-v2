@@ -21,8 +21,8 @@ export const Card: React.FC<{
   const { card, link } = useClickableCard({})
   const { className, doc, relationTo, title: titleFromProps } = props
 
-  const { slug, categories, meta, title, heroImage } = doc || {}
-  const { description, image: metaImage } = meta || {}
+  const { slug, meta, title, heroImage } = doc || {}
+  const { image: metaImage } = meta || {}
   const imageToUse = heroImage || metaImage
 
   const titleToUse = titleFromProps || title

@@ -3,6 +3,7 @@ import { CategoryArchive } from '@/components/CategoryArchive'
 import { CollectionArchive } from '@/components/CollectionArchive'
 import { BookPromo } from '@/components/BookPromo'
 import { Memberships } from '@/components/Memberships'
+import { BottomCTA } from '@/components/sections/services/BottomCTA'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
@@ -41,7 +42,6 @@ export default async function Page() {
       meta: true,
       createdAt: true,
       heroImage: true,
-      content: true,
     },
   })
 
@@ -114,6 +114,10 @@ export default async function Page() {
       </div>
 
       <BookPromo />
+
+      {/* ── BOTTOM CTA SECTION ── */}
+      {/* <BottomCTA /> */}
+
       <Memberships />
     </>
   )

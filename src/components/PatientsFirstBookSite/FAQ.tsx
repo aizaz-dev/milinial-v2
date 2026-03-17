@@ -3,7 +3,19 @@
 import React, { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
-const faqs = [
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface FAQProps {
+  faqs?: FAQItem[];
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}
+
+const defaultFaqs = [
   {
     question: 'Für wen ist das Buch am hilfreichsten?',
     answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Zigi Energy und es lauft alte.',
@@ -26,7 +38,12 @@ const faqs = [
   },
 ]
 
-const FAQ = () => {
+const FAQ: React.FC<FAQProps> = ({
+  faqs = defaultFaqs,
+  eyebrow = "Häufige Fragen - transparent",
+  title = "Alles, was Sie vorab wissen möchten",
+  description = "Die häufigsten Fragen zum kostenlosen Kapitel und zum Buchkauf – kompakt beantwortet, ohne Kleingedrucktes."
+}) => {
   const [openIndex, setOpenIndex] = useState<number | null>(1) // Default open second one matching mockup
 
   const toggleFAQ = (index: number) => {
@@ -40,17 +57,17 @@ const FAQ = () => {
         {/* Eyebrow */}
         <div className="flex flex-row justify-center items-center px-[12px] py-[4px] gap-[4px] min-w-[240px] h-[35px] bg-[#F6F6F6] border border-[rgba(152,157,173,0.3)] rounded-[36px] box-border">
           <span className="font-['Geist',sans-serif] font-normal text-[16px] leading-[170%] text-center text-[#403F3C] whitespace-nowrap">
-            Häufige Fragen - transparent
+            {eyebrow}
           </span>
         </div>
 
         {/* Headline Container */}
         <div className="flex flex-col items-center gap-[16px] w-full">
           <h2 className="font-['Inter',sans-serif] font-semibold text-[40px] md:text-[60px] leading-[120%] text-center tracking-[-1.5px] text-[#050503] m-0">
-            Alles, was Sie vorab wissen möchten
+            {title}
           </h2>
           <p className="font-['Inter',sans-serif] font-normal text-[16px] md:text-[18px] leading-[170%] text-center text-[#403F3C] max-w-[630px] m-0">
-            Die häufigsten Fragen zum kostenlosen Kapitel und zum Buchkauf – kompakt beantwortet, ohne Kleingedrucktes.
+            {description}
           </p>
         </div>
       </div>

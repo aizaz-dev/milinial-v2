@@ -55,10 +55,10 @@ export const PurpleCTA: React.FC<PurpleCTAProps> = ({
               )}
             </div>
           </div>
-          
+
           <div className="relative h-64 lg:h-96 w-full lg:w-auto flex justify-center lg:justify-end items-end">
-            <div className="relative w-full h-full max-w-sm lg:absolute lg:bottom-[-4rem] lg:right-0">
-               <Image
+            <div className="relative w-full h-full max-w-sm lg:absolute lg:-bottom-16 lg:right-0">
+              <Image
                 src={image}
                 alt="Person"
                 fill
@@ -67,10 +67,10 @@ export const PurpleCTA: React.FC<PurpleCTAProps> = ({
             </div>
           </div>
         </div>
-        
+
         {/* Background Pattern */}
         <div className="absolute top-0 right-0 w-full h-full pointer-events-none opacity-10">
-           {/* Add subtle pattern here if needed */}
+          {/* Add subtle pattern here if needed */}
         </div>
       </div>
     </section>

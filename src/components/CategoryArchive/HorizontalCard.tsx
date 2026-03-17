@@ -7,22 +7,7 @@ import { Media } from '@/components/Media'
 import type { Blog } from '@/payload-types'
 import useClickableCard from '@/utilities/useClickableCard'
 
-export type HorizontalCardPostData = Pick<Blog, 'slug' | 'categories' | 'meta' | 'title' | 'createdAt' | 'heroImage' | 'content'>
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const extractLexicalText = (node: any): string => {
-  if (!node) return ''
-  let text = ''
-  if (node.type === 'text' && typeof node.text === 'string') {
-    text += node.text
-  }
-  if (Array.isArray(node.children)) {
-    for (const child of node.children) {
-      text += extractLexicalText(child) + ' '
-    }
-  }
-  return text.trim()
-}
+export type HorizontalCardPostData = Pick<Blog, 'slug' | 'categories' | 'meta' | 'title' | 'createdAt' | 'heroImage'>
 
 export const HorizontalCard: React.FC<{
   className?: string
@@ -33,14 +18,11 @@ export const HorizontalCard: React.FC<{
   const { card, link } = useClickableCard({})
   const { className, doc, relationTo = 'blogs', index = 0 } = props
 
-  const { slug, meta, title, createdAt, heroImage, content } = doc || {}
+  const { slug, meta, title, createdAt, heroImage } = doc || {}
   const { description, image: metaImage } = meta || {}
   const imageToUse = heroImage || metaImage
 
   let textDescription = description || ''
-  if (!textDescription && content?.root) {
-    textDescription = extractLexicalText(content.root)
-  }
 
   const sanitizedDescription = textDescription.replace(/\s+/g, ' ').trim()
 

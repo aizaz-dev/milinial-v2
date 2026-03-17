@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { cn } from '@/utilities/ui'
 import { HorizontalCard } from './HorizontalCard'
-import type { Blog } from '@/payload-types'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Props = {
@@ -26,26 +25,19 @@ export const CategoryArchive: React.FC<Props> = ({ initialPosts, categories }) =
   const isFirstMount = useRef(true)
 
   useEffect(() => {
-    if (isFirstMount.current) {
-      isFirstMount.current = false
-      return
-    }
-
     let isMounted = true
-    setLoading(true)
+    // Skip loading state on initial mount to avoid flicker if already passed via props
+    if (!isFirstMount.current) {
+        setLoading(true)
+    } else {
+        isFirstMount.current = false
+    }
 
     // Build query
     const url = new URL('/api/blogs', window.location.origin)
     url.searchParams.set('limit', '5')
     url.searchParams.set('depth', '1')
     url.searchParams.set('sort', '-createdAt')
-    url.searchParams.set('select[content]', 'true')
-    url.searchParams.set('select[meta]', 'true')
-    url.searchParams.set('select[title]', 'true')
-    url.searchParams.set('select[slug]', 'true')
-    url.searchParams.set('select[categories]', 'true')
-    url.searchParams.set('select[heroImage]', 'true')
-    url.searchParams.set('select[createdAt]', 'true')
 
     if (activeCategory) {
       url.searchParams.set('where[categories][in]', activeCategory)
@@ -79,13 +71,6 @@ export const CategoryArchive: React.FC<Props> = ({ initialPosts, categories }) =
     url.searchParams.set('depth', '1')
     url.searchParams.set('sort', '-createdAt')
     url.searchParams.set('page', String(nextPage))
-    url.searchParams.set('select[content]', 'true')
-    url.searchParams.set('select[meta]', 'true')
-    url.searchParams.set('select[title]', 'true')
-    url.searchParams.set('select[slug]', 'true')
-    url.searchParams.set('select[categories]', 'true')
-    url.searchParams.set('select[heroImage]', 'true')
-    url.searchParams.set('select[createdAt]', 'true')
 
     if (activeCategory) {
       url.searchParams.set('where[categories][in]', activeCategory)

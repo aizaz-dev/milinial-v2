@@ -3,8 +3,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { useBooking } from "@/providers/Booking"
 
 export default function CTABanner() {
+  const { openModal } = useBooking()
   return (
     <section className="bg-[#F6F7F980] py-40">
       <div className="max-w-[1280px] mx-auto px-6 relative">
@@ -24,27 +26,26 @@ export default function CTABanner() {
               damit Fortschritt sichtbar wird.
             </p>
 
-            <div className="flex gap-5">
+            <div className="flex gap-5 items-stretch">
 
-              <Link
-                href="#"
+              <button
+                onClick={openModal}
                 className="flex items-center gap-3 bg-[#2905C7] text-white
-                px-6 py-3 rounded-[12px]"
+                px-6 h-[52px] rounded-[12px] font-semibold whitespace-nowrap font-['Figtree',sans-serif] hover:opacity-90 transition-opacity"
               >
                 Jetzt Erstgespräch buchen
-
-                <span className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-[#1e1a88]">
-                  <ArrowUpRight size={16}/>
+                <span className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-[#1e1a88] shrink-0">
+                  <ArrowUpRight size={16} />
                 </span>
-              </Link>
+              </button>
 
               <Link
-                href="#"
+                href="/kontakt"
                 className="flex items-center gap-2 border border-white/40
-                px-6 py-3 rounded-[12px] text-white"
+                px-6 h-[52px] rounded-[12px] text-white font-semibold whitespace-nowrap font-['Figtree',sans-serif] hover:bg-white/10 transition-all"
               >
                 Angebot anfragen
-                <ArrowRight size={16}/>
+                <ArrowRight size={16} />
               </Link>
 
             </div>

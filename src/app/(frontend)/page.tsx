@@ -18,16 +18,16 @@ export { generateMetadata }
 export default async function Page() {
   return (
     <div className="bg-background text-foreground">
-        <HeroSection />
-        <TrustedLogos />
-        <LeadershipSection />
-        <ServicesSection />
-        <Leadership />
-        <InsightsSection />
-        <div className="py-12">
-          <BookPromo />
-        </div>
-        <Memberships />
+      <HeroSection />
+      <TrustedLogos />
+      <LeadershipSection />
+      <ServicesSection />
+      <Leadership />
+      <InsightsSection />
+      <div className="pt-12">
+        <BookPromo />
+      </div>
+      <Memberships />
     </div>
   )
 }

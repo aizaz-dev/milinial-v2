@@ -41,14 +41,19 @@ const CTA = () => {
             </p>
 
             {/* CTA Button */}
-            <button className="flex flex-row items-center justify-between w-full max-w-[331px] h-[55px] bg-[#FFFFFF] rounded-[16px] px-[16px] pr-[8px] hover:bg-[#f6f6f6] transition-colors shadow-[0px_75px_30px_rgba(0,0,0,0.01),0px_42px_25px_rgba(0,0,0,0.05),0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)] group shrink-0">
+            <a 
+              href="https://www.bod.de/buchshop/patients-first-philipp-r-juchli-9783751956932" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex flex-row items-center justify-between w-full max-w-[331px] h-[55px] bg-[#FFFFFF] rounded-[16px] px-[16px] pr-[8px] hover:bg-[#f6f6f6] transition-colors shadow-[0px_75px_30px_rgba(0,0,0,0.01),0px_42px_25px_rgba(0,0,0,0.05),0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)] group shrink-0 cursor-pointer"
+            >
               <span className="font-['Inter',sans-serif] font-medium text-[16px] leading-[170%] tracking-[-0.2px] text-[#1B1B1D]">
                 Buch kaufen bei BookOnDemand
               </span>
-              <div className="w-[38.63px] h-[38.63px] bg-[#F3F3F3] rounded-[12px] flex items-center justify-center shrink-0 group-hover:bg-[#e6e6e6] transition-colors">
+              <div className="w-[38.63px] h-[38.63px] bg-[#F3F3F3] rounded-[12px] flex items-center justify-center shrink-0 group-hover:bg-[#e6e6e6] transition-colors cursor-pointer">
                 <ShoppingCart className="w-[18px] h-[18px] text-[#000000]" strokeWidth={2} />
               </div>
-            </button>
+            </a>
 
           </div>
         </div>

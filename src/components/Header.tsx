@@ -40,7 +40,7 @@ const Header = () => {
                 <div className="hidden lg:flex shrink-0">
                     <button
                         onClick={openModal}
-                        className="inline-flex items-center h-[43px] pt-[8px] pr-[8px] pb-[8px] pl-[16px] gap-[12px] rounded-[16px] border border-gray-300 bg-white text-[15px] font-medium text-gray-900 transition-colors hover:bg-gray-50 whitespace-nowrap"
+                        className="inline-flex items-center h-[43px] pt-[8px] pr-[8px] pb-[8px] pl-[16px] gap-[12px] rounded-[16px] border border-gray-300 bg-white text-[15px] font-medium text-gray-900 transition-colors hover:bg-gray-50 whitespace-nowrap cursor-pointer"
                     >
                         Angebot anfragen
                         <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100/50 shrink-0">

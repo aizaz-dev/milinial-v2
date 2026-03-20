@@ -33,11 +33,11 @@ export const ServicesHowItWorks: React.FC = () => {
             </span>
           </div>
           {/* Headline */}
-          <h2 className="font-['Geist',sans-serif] font-medium text-[36px] sm:text-[48px] lg:text-[60px] leading-[120%] tracking-[-2px] text-[#191715] m-0">
+          <h2 className="font-geist font-medium text-[36px] sm:text-[48px] lg:text-[60px] leading-[120%] tracking-[-2px] text-[#191715] m-0">
             In drei Schritten zum Start
           </h2>
           {/* Subheadline */}
-          <p className="font-['Geist',sans-serif] font-normal text-[16px] lg:text-[18px] leading-[170%] text-[#373A46] opacity-80 m-0 max-w-[540px]">
+          <p className="font-geist font-normal text-[16px] lg:text-[18px] leading-[170%] text-[#373A46] opacity-80 m-0 max-w-[540px]">
             Unkompliziert und vertraulich: Anfrage senden oder Erstgespräch buchen – danach erfolgt eine kurze Einordnung, und der Start erfolgt nach Absprache.
           </p>
         </div>

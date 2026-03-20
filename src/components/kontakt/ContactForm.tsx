@@ -5,6 +5,9 @@ import Link from 'next/link'
 
 export const ContactForm: React.FC = () => {
   const [agreed, setAgreed] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     firma: '',
     unternehmensgroesse: '',
@@ -22,9 +25,47 @@ export const ContactForm: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle submission
+    if (!agreed) {
+      setError('Bitte stimmen Sie der Datenschutzerklärung zu.')
+      return
+    }
+    if (!formData.vorname || !formData.email) {
+      setError('Vorname und E-Mail sind Pflichtfelder.')
+      return
+    }
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Fehler beim Senden.')
+      
+      // Clear form on success
+      setSuccess(true)
+      setFormData({
+        firma: '',
+        unternehmensgroesse: '',
+        vorname: '',
+        nachname: '',
+        funktion: '',
+        email: '',
+        telefon: '',
+        artDerBeratung: '',
+        anvisierterStart: '',
+        nachricht: '',
+      })
+      setAgreed(false)
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Unbekannter Fehler.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   // Shared input classes
@@ -220,14 +261,28 @@ export const ContactForm: React.FC = () => {
               </label>
             </div>
 
+            {/* Error / Success messages */}
+            {error && (
+              <p className="text-red-600 font-['Inter',sans-serif] text-[14px]">{error}</p>
+            )}
+            {success && (
+              <div className="w-full bg-green-50 border border-green-200 rounded-[8px] px-[20px] py-[14px]">
+                <p className="text-green-700 font-['Inter',sans-serif] text-[15px] font-medium">
+                  ✓ Ihre Anfrage wurde erfolgreich gesendet! Wir melden uns in Kürze.
+                </p>
+              </div>
+            )}
+
             {/* Buttons row */}
+            {!success && (
             <div className="flex flex-row flex-wrap items-center justify-between gap-[16px] mt-[4px]">
               {/* Submit */}
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-[24px] py-[14px] bg-[#1A037F] rounded-[8px] font-['Inter',sans-serif] font-medium text-[16px] leading-[170%] tracking-[0.02em] text-white hover:bg-[#150266] transition-colors whitespace-nowrap"
+                disabled={loading}
+                className="inline-flex items-center justify-center px-[24px] py-[14px] bg-[#1A037F] rounded-[8px] font-['Inter',sans-serif] font-medium text-[16px] leading-[170%] tracking-[0.02em] text-white hover:bg-[#150266] disabled:opacity-60 disabled:cursor-not-allowed transition-colors whitespace-nowrap"
               >
-                Anfrage abschicken
+                {loading ? 'Wird gesendet...' : 'Anfrage abschicken'}
               </button>
 
               {/* AGB + Datenschutz links */}
@@ -246,6 +301,7 @@ export const ContactForm: React.FC = () => {
                 </Link>
               </div>
             </div>
+            )}
 
           </form>
         </div>

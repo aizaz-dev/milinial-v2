@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 export const ServiceHero: React.FC = () => {
   return (
-    <section className="w-full flex justify-center pt-[80px] pb-[60px] lg:pt-[191px] lg:pb-[140px] px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+    <section className="w-full flex bg-[#FBFAF8] justify-center pt-[80px]  lg:pt-[191px]  px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <div className="flex flex-col items-start gap-[40px] md:gap-[56px] w-full max-w-[1270px] mx-auto">
-        
+
         {/* Top Header Row */}
         <div className="flex flex-col lg:flex-row items-start lg:items-end w-full gap-[24px] md:gap-[32px] lg:gap-[128px]">
           {/* Section Title */}
@@ -16,13 +16,13 @@ export const ServiceHero: React.FC = () => {
                 Verantwortung übernehmen, wenn es zählt
               </span>
             </div>
-            
+
             {/* Main title */}
             <h1 className="font-['Inter',sans-serif] font-semibold text-[40px] md:text-[52px] lg:text-[62px] leading-[115%] tracking-[-2px] text-[#000000] m-0">
-              Unser Angebot
+              Unser <br className='max-md:hidden' /> Angebot
             </h1>
           </div>
-          
+
           {/* Subtext */}
           <p className="font-['Inter',sans-serif] font-medium text-[18px] md:text-[22px] lg:text-[32px] leading-[150%] tracking-[-0.5px] lg:tracking-[-1px] text-[#000000] w-full m-0">
             Wir stabilisieren Unternehmen in kritischen Phasen, integrieren nach Übernahme/Fusion und verbessern Leistung nachhaltig.
@@ -65,7 +65,7 @@ export const ServiceHero: React.FC = () => {
             />
           </div>
         </div>
-        
+
       </div>
     </section>
   )

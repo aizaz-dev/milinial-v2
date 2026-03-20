@@ -1,7 +1,10 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight, ArrowRight } from 'lucide-react'
+import { useBooking } from "@/providers/Booking"
 
 export interface ServicesCTAProps {
   title?: React.ReactNode
@@ -18,12 +21,13 @@ export const ServicesCTA: React.FC<ServicesCTAProps> = ({
   description = "Viele Situationen lassen sich nicht sauber in drei Kategorien pressen. Wenn Ihr Anliegen in eine andere Richtung geht: kurz schildern – dann erfolgt eine klare Rückmeldung, ob und wie wir Sie unterstützen können. Unser Ansatz Leadership by Congruence© funktioniert nicht nur für unsere Kernleistungen.",
   imageSrc = "/assets/services/man-standing.png",
   primaryButtonText = "Erstgespräch buchen",
-  primaryButtonHref = "/contact",
+  primaryButtonHref = "#booking",
   secondaryButtonText = "Anfrage senden",
-  secondaryButtonHref = "/contact",
+  secondaryButtonHref = "/kontakt",
 }) => {
+  const { openModal } = useBooking();
   return (
-    <section className="w-full bg-[rgba(246,247,249,0.5)] overflow-hidden">
+    <section className="w-full bg-[#F6F7F980] overflow-hidden">
 
       {/* ── MOBILE & TABLET layout (< lg) ── */}
       <div className="lg:hidden w-full px-4 sm:px-6 pt-[48px] pb-0 flex flex-col gap-0">
@@ -53,16 +57,30 @@ export const ServicesCTA: React.FC<ServicesCTAProps> = ({
             </p>
           </div>
           <div className="flex flex-row flex-wrap items-center gap-[14px]">
-            <Link
-              href={primaryButtonHref}
-              className="inline-flex items-center pl-[14px] pr-[8px] py-[8px] gap-[10px] rounded-[14px] font-['Inter',sans-serif] font-semibold text-[15px] sm:text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity"
-              style={{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), #2905C7', boxShadow: '0px 5px 10px rgba(0,0,0,0.1)' }}
-            >
-              <span>{primaryButtonText}</span>
-              <span className="w-[34px] h-[34px] bg-white rounded-[10px] flex items-center justify-center shrink-0">
-                <ArrowUpRight className="w-[14px] h-[14px] text-[#666666]" strokeWidth={2} />
-              </span>
-            </Link>
+            {primaryButtonHref === '#booking' ? (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  openModal();
+                }}
+                className="inline-flex items-center pl-[14px] pr-[8px] py-[8px] gap-[10px] rounded-[14px] font-['Inter',sans-serif] font-semibold text-[15px] sm:text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity bg-[#1a037f] shadow-[0px_5px_10px_rgba(0,0,0,0.1)]"
+              >
+                <span>{primaryButtonText}</span>
+                <span className="w-[34px] h-[34px] bg-white rounded-[10px] flex items-center justify-center shrink-0">
+                  <ArrowUpRight className="w-[14px] h-[14px] text-[#666666]" strokeWidth={2} />
+                </span>
+              </button>
+            ) : (
+              <Link
+                href={primaryButtonHref}
+                className="inline-flex items-center pl-[14px] pr-[8px] py-[8px] gap-[10px] rounded-[14px] font-['Inter',sans-serif] font-semibold text-[15px] sm:text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity bg-[#1a037f] shadow-[0px_5px_10px_rgba(0,0,0,0.1)]"
+              >
+                <span>{primaryButtonText}</span>
+                <span className="w-[34px] h-[34px] bg-white rounded-[10px] flex items-center justify-center shrink-0">
+                  <ArrowUpRight className="w-[14px] h-[14px] text-[#666666]" strokeWidth={2} />
+                </span>
+              </Link>
+            )}
             <Link
               href={secondaryButtonHref}
               className="inline-flex items-center pl-[14px] pr-[12px] py-[8px] gap-[10px] rounded-[14px] border border-white font-['Inter',sans-serif] font-semibold text-[15px] sm:text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity"
@@ -117,18 +135,32 @@ export const ServicesCTA: React.FC<ServicesCTAProps> = ({
               </p>
             </div>
 
-            <div className="flex flex-row items-center gap-[38px]">
+              <div className="flex flex-row items-center gap-[38px]">
               {/* Primary */}
-              <Link
-                href={primaryButtonHref}
-                className="inline-flex flex-row items-center pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[20px] leading-[170%] tracking-[-0.2px] text-white hover:opacity-90 transition-opacity shrink-0"
-                style={{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), #2905C7', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
-              >
-                <span className="whitespace-nowrap">{primaryButtonText}</span>
-                <span className="w-[38px] h-[38px] bg-white rounded-[12px] flex items-center justify-center shrink-0">
-                  <ArrowUpRight className="w-[16px] h-[16px] text-[#666666]" strokeWidth={2} />
-                </span>
-              </Link>
+              {primaryButtonHref === '#booking' ? (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openModal();
+                  }}
+                  className="inline-flex flex-row items-center pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[20px] leading-[170%] tracking-[-0.2px] text-white hover:opacity-90 transition-opacity shrink-0 bg-[#1a037f] shadow-[0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)]"
+                >
+                  <span className="whitespace-nowrap">{primaryButtonText}</span>
+                  <span className="w-[38px] h-[38px] bg-white rounded-[12px] flex items-center justify-center shrink-0">
+                    <ArrowUpRight className="w-[16px] h-[16px] text-[#666666]" strokeWidth={2} />
+                  </span>
+                </button>
+              ) : (
+                <Link
+                  href={primaryButtonHref}
+                  className="inline-flex flex-row items-center pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[20px] leading-[170%] tracking-[-0.2px] text-white hover:opacity-90 transition-opacity shrink-0 bg-[#1a037f] shadow-[0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)]"
+                >
+                  <span className="whitespace-nowrap">{primaryButtonText}</span>
+                  <span className="w-[38px] h-[38px] bg-white rounded-[12px] flex items-center justify-center shrink-0">
+                    <ArrowUpRight className="w-[16px] h-[16px] text-[#666666]" strokeWidth={2} />
+                  </span>
+                </Link>
+              )}
               {/* Secondary */}
               <Link
                 href={secondaryButtonHref}

@@ -3,11 +3,9 @@ import HeroSection from '@/components/About/Section/Hero'
 import ValuesSection from '@/components/About/Section/Values'
 import PerspectiveSection from '@/components/About/Section/PerspectiveSection'
 import TeamImpactSection from '@/components/About/Section/TeamImpact'
-import ProfileSection from '@/components/About/Section/ProfileSection'
-import ProfileSectionTwo from '@/components/About/Section/ProfileSectionTwo'
 import LeadershipSection from '@/components/About/Section/LeadershipSection'
-import CTABanner from '@/components/About/Section/CTASection'
-import MembershipLogos from '@/components/About/Section/MembershipLogos'
+import { ServicesCTA } from '@/components/sections/services/ServicesCTA'
+import { Memberships } from '@/components/Memberships'
 
 
 
@@ -17,15 +15,22 @@ export const revalidate = 600
 export default function Page() {
   return (
     <div className="bg-background text-foreground">
-        <HeroSection />
-        <ValuesSection />
-        <PerspectiveSection />
-        <TeamImpactSection />
-        <ProfileSection />
-        <ProfileSectionTwo />
-        <LeadershipSection />
-        <CTABanner />
-        <MembershipLogos />
+      <HeroSection />
+      <ValuesSection />
+      <PerspectiveSection />
+      <TeamImpactSection />
+      <LeadershipSection />
+      <ServicesCTA
+        title="Ist Ihr Übergang sauber gesteuert – oder nur „irgendwie in Arbeit“?"
+        description="Wir bringen Klarheit in Ziele, Verantwortungen und Taktung – damit Fortschritt sichtbar wird."
+        imageSrc="/assets/about/team.png"
+        primaryButtonText="Jetzt Erstgespräch buchen"
+        primaryButtonHref="#booking"
+        secondaryButtonText="Angebot anfragen"
+        secondaryButtonHref="/kontakt"
+      />
+      <Memberships />
+
     </div>
   )
 }

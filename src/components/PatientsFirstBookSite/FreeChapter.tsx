@@ -1,7 +1,37 @@
-import React from 'react'
-import { ArrowUpRight } from 'lucide-react'
+'use client'
+
+import React, { useState } from 'react'
+import { ArrowUpRight, CheckCircle2, Loader2 } from 'lucide-react'
 
 const PatientsFirstBookFreeChapter = () => {
+  const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await fetch('/api/lead-magnet', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Fehler beim Senden.')
+      setSuccess(true)
+      setEmail('')
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Unbekannter Fehler.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section
       className="relative w-full min-h-[918px] overflow-hidden flex flex-col items-center justify-start  bg-linear-to-b from-[#433E72] to-[#4C39A8]"
@@ -78,17 +108,42 @@ const PatientsFirstBookFreeChapter = () => {
             <div className="flex flex-col md:flex-row items-center justify-center gap-[20px] w-full max-w-[527px]">
 
               {/* Input Group */}
-              <div className="flex flex-row gap-1 relative w-full md:w-[338.63px] h-[55px] shadow-[0px_75px_30px_rgba(0,0,0,0.01),0px_42px_25px_rgba(0,0,0,0.05),0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)]">
-                <input
-                  type="email"
-                  placeholder="eMail eintragen"
-                  className="w-full flex-1 h-[55px] bg-white/80 border-none outline-none pl-[16px] pr-[10px] rounded-l-[16px] rounded-r-none font-['Figtree',sans-serif] font-semibold text-[16px] text-[#1B1B1D] tracking-[-0.2px] placeholder-[#1B1B1D]"
-                />
-                <button className="shrink-0 w-[65px] h-[55px] bg-white rounded-r-[16px] rounded-l-none flex items-center justify-center relative">
-                  <div className="w-[38.63px] h-[38.63px] bg-[#E8E7E7] rounded-[12px] flex items-center justify-center hover:bg-[#d6d6d6] transition-colors">
-                    <ArrowUpRight className="w-[18px] h-[18px] text-[#666666]" strokeWidth={2} />
+              <div className="flex flex-col w-full md:w-[338.63px] relative">
+                {success ? (
+                  <div className="flex flex-row items-center justify-center gap-[8px] w-full h-[55px] bg-green-500/20 border border-green-500/50 rounded-[16px] text-white">
+                    <CheckCircle2 className="w-5 h-5 text-green-400" />
+                    <span className="font-['Figtree',sans-serif] font-medium text-[15px]">Leseprobe wurde gesendet!</span>
                   </div>
-                </button>
+                ) : (
+                  <form 
+                    onSubmit={handleSubmit}
+                    className="flex flex-row gap-1 relative w-full h-[55px] shadow-[0px_75px_30px_rgba(0,0,0,0.01),0px_42px_25px_rgba(0,0,0,0.05),0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)]"
+                  >
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={loading}
+                      placeholder="eMail eintragen"
+                      className="w-full flex-1 h-[55px] bg-white/80 border-none outline-none pl-[16px] pr-[10px] rounded-l-[16px] rounded-r-none font-['Figtree',sans-serif] font-semibold text-[16px] text-[#1B1B1D] tracking-[-0.2px] placeholder-[#1B1B1D] disabled:opacity-70"
+                    />
+                    <button 
+                      type="submit"
+                      disabled={loading || !email}
+                      className="shrink-0 w-[65px] h-[55px] bg-white rounded-r-[16px] rounded-l-none flex items-center justify-center relative disabled:cursor-not-allowed group"
+                    >
+                      <div className="w-[38.63px] h-[38.63px] bg-[#E8E7E7] rounded-[12px] flex items-center justify-center group-hover:bg-[#d6d6d6] group-disabled:opacity-70 transition-colors">
+                        {loading ? (
+                          <Loader2 className="w-[18px] h-[18px] text-[#666666] animate-spin" strokeWidth={2} />
+                        ) : (
+                          <ArrowUpRight className="w-[18px] h-[18px] text-[#666666]" strokeWidth={2} />
+                        )}
+                      </div>
+                    </button>
+                  </form>
+                )}
+                {error && <span className="absolute -bottom-6 left-0 text-red-200 text-sm">{error}</span>}
               </div>
 
               {/* Buch Kaufen Button */}

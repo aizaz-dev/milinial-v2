@@ -43,16 +43,15 @@ export default function CTABanner({ heading, subheading, image }: Props) {
                 {subheading}
               </p>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap">
 
                 {/* Button 1 */}
                 <Link
-                  href="#"
-                  className="flex items-center gap-3 bg-[#2c2aa2] hover:bg-[#24218c]
-                  px-6 py-3 rounded-lg text-sm font-medium transition"
+                  href="/services"
+                  className="flex items-center gap-3 bg-[#2c2aa2] hover:opacity-90
+                  px-6 py-3 rounded-lg text-sm font-semibold transition font-['Figtree',sans-serif] text-white"
                 >
                   Leistungen ansehen
-
                   <span className="flex items-center justify-center 
                     w-6 h-6 bg-white rounded-md text-[#2c2aa2]">
                     <ArrowRight size={14} />
@@ -61,12 +60,11 @@ export default function CTABanner({ heading, subheading, image }: Props) {
 
                 {/* Button 2 */}
                 <Link
-                  href="#"
+                  href="/kontakt"
                   className="flex items-center gap-3 border border-white/40
-                  px-6 py-3 rounded-lg text-sm hover:bg-white/10 transition"
+                  px-6 py-3 rounded-lg text-sm hover:bg-white/10 transition font-semibold font-['Figtree',sans-serif] text-white"
                 >
                   Angebot anfragen
-
                   <span className="flex items-center justify-center
                     w-6 h-6 bg-white/20 rounded-md">
                     <ArrowRight size={14} />

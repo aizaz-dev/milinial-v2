@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
 type CardProps = {
@@ -9,7 +10,7 @@ type CardProps = {
 
 function ServiceCard({ image, title, description }: CardProps) {
   return (
-    <div className="relative w-full lg:w-[424px] h-[562px] rounded-[16px] overflow-hidden group cursor-pointer shrink-0">
+    <Link href="/services" className="block relative w-full lg:w-[424px] h-[562px] rounded-[16px] overflow-hidden group cursor-pointer shrink-0">
       
       <Image
         src={image}
@@ -35,7 +36,7 @@ function ServiceCard({ image, title, description }: CardProps) {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -68,11 +69,11 @@ export default function ServicesSection() {
               Individuell zugeschnittene Beratung, Interim-Lösungen und Restrukturierungen & Turnaround Partner - gezielt für Unternehmen, die mehr als Standard erwarten.
             </p>
 
-            <button className="flex flex-row justify-center items-center px-[24px] py-[14px] gap-[8px] h-[56px] bg-[#19037C] hover:bg-[#11015c] transition-colors rounded-[8px] w-max">
+            <Link href="/services" className="flex flex-row justify-center items-center px-[24px] py-[14px] gap-[8px] h-[56px] bg-[#19037C] hover:bg-[#11015c] transition-colors rounded-[8px] w-max">
               <span className="font-['IBM_Plex_Sans',sans-serif] font-medium text-[16px] leading-[24px] text-[#FFFFFF]">
                 Angebote entdecken
               </span>
-            </button>
+            </Link>
           </div>
           
         </div>

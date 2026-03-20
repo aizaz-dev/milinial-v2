@@ -97,7 +97,7 @@ export const BottomCTA: React.FC<BottomCTAProps> = ({
               {/* Primary */}
               <Link
                 href={primaryButtonHref}
-                className="inline-flex flex-row items-center pl-[20px] pr-[8px] py-[8px] gap-[12px] rounded-[12px] font-['Inter',sans-serif] font-semibold text-[18px] leading-[150%] tracking-[-0.2px] text-white hover:opacity-90 transition-opacity shrink-0"
+                className="inline-flex flex-row items-center pl-[20px] pr-[8px] py-[9px] gap-[12px] rounded-[12px] font-figtree font-semibold text-[18px] leading-[150%] tracking-[-0.2px] text-white hover:opacity-90 transition-opacity shrink-0"
                 style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
               >
                 <span className="whitespace-nowrap">{primaryButtonText}</span>
@@ -108,7 +108,7 @@ export const BottomCTA: React.FC<BottomCTAProps> = ({
               {/* Secondary */}
               <Link
                 href={secondaryButtonHref}
-                className="inline-flex flex-row items-center px-[24px] py-[12px] gap-[8px] rounded-[12px] border border-white font-['Inter',sans-serif] font-semibold text-[18px] leading-[150%] tracking-[-0.02em] text-white hover:bg-white/10 transition-all shrink-0"
+                className="inline-flex flex-row items-center px-[24px] py-[10px] gap-[8px] rounded-[12px] border border-white font-figtree font-semibold text-[18px] leading-[150%] tracking-[-0.02em] text-white hover:bg-white/10 transition-all shrink-0"
               >
                 <span className="whitespace-nowrap">{secondaryButtonText}</span>
                 <ArrowRight className="w-[20px] h-[20px] shrink-0" strokeWidth={2} />

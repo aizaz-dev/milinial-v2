@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from 'next/link';
+import { useBooking } from "@/providers/Booking";
 
 export default function Hero() {
+  const { openModal } = useBooking()
   return (
     <section className="relative w-full bg-[#FBFAF8] overflow-hidden pt-24 max-md:pt-13 min-h-[600px] lg:h-[1080px]">
 
@@ -25,7 +28,7 @@ export default function Hero() {
 
         {/* Headline */}
         <div className="flex flex-col items-center gap-2">
-          <h1 className="font-['Inter'] font-semibold text-[32pSx] sm:text-[42px] leading-[115%] tracking-[-1.5px] text-center text-[#0C2217] m-0">
+          <h1 className="font-['Inter'] font-semibold text-[32pSx] sm:text-[42px] leading-[115%] tracking-[-1.5px] text-center m-0">
             Von der Krise zu tragfähiger
           </h1>
           <h2
@@ -43,9 +46,9 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-[400px]">
-          <button className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-full sm:flex-1 h-[54px] bg-[#2905C7] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1)] hover:bg-[#2003a3] transition-colors relative">
+          <button onClick={openModal} className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-full sm:flex-1 h-[54px] bg-[#2905C7] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1)] hover:opacity-90 transition-opacity relative font-['Figtree',sans-serif] cursor-pointer">
             <div className="absolute inset-0 rounded-[16px] pointer-events-none" style={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))' }} />
-            <span className="font-['Figtree'] font-semibold text-[15px] leading-[170%] tracking-[-0.2px] text-[#FFFFFF] relative z-10 text-center">
+            <span className="font-semibold text-[15px] leading-[170%] tracking-[-0.2px] text-[#FFFFFF] relative z-10 text-center">
               Jetzt Erstgespräch buchen
             </span>
             <div className="flex flex-row items-center p-[8px] gap-[8px] w-[38px] h-[38px] bg-[#FFFFFF] rounded-[12px] relative z-10 shrink-0">
@@ -55,11 +58,11 @@ export default function Hero() {
             </div>
           </button>
 
-          <button className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-full sm:w-[149px] h-[55px] border border-[#19037C] rounded-[16px] hover:bg-black/5 transition-colors bg-white">
-            <span className="font-['Inter'] font-semibold text-[15px] leading-[170%] tracking-[-0.2px] text-[#0A0400]">
+          <Link href="/about" className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-full sm:w-[149px] h-[55px] border border-[#19037C] rounded-[16px] hover:bg-black/5 transition-colors bg-white font-['Figtree',sans-serif]">
+            <span className="font-semibold text-[15px] leading-[170%] tracking-[-0.2px] text-[#0A0400]">
               Mehr erfahren
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* Hero image on mobile — full bleed width */}
@@ -103,9 +106,9 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="absolute w-full h-[55px] left-0 top-[324px] flex justify-center gap-[20px]">
-            <button className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-[273px] h-[54.63px] bg-[#2905C7] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1),0px_19px_19px_rgba(0,0,0,0.09),0px_42px_25px_rgba(0,0,0,0.05)] hover:bg-[#2003a3] transition-colors relative ml-[-38px]">
+            <button onClick={openModal} className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-[273px] h-[54.63px] bg-[#2905C7] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1),0px_19px_19px_rgba(0,0,0,0.09),0px_42px_25px_rgba(0,0,0,0.05)] hover:opacity-90 transition-opacity relative ml-[-38px] font-['Figtree',sans-serif]">
               <div className="absolute inset-0 rounded-[16px] pointer-events-none" style={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))' }} />
-              <span className="font-['Figtree'] font-semibold text-[16px] leading-[170%] tracking-[-0.2px] text-[#FFFFFF] relative z-10 w-[199px] text-left">
+              <span className="font-semibold text-[16px] leading-[170%] tracking-[-0.2px] text-[#FFFFFF] relative z-10 w-[199px] text-left">
                 Jetzt Erstgespräch buchen
               </span>
               <div className="flex flex-row items-center p-[8px] gap-[8px] w-[38.63px] h-[38.63px] bg-[#FFFFFF] rounded-[12px] relative z-10">
@@ -115,11 +118,11 @@ export default function Hero() {
               </div>
             </button>
 
-            <button className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-[149px] h-[55px] border border-[#19037C] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1)] hover:bg-black/5 transition-colors bg-white">
-              <span className="font-['Inter'] font-semibold text-[16px] leading-[170%] tracking-[-0.2px] text-[#0A0400]">
+            <Link href="/about" className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-[149px] h-[55px] border border-[#19037C] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1)] hover:bg-black/5 transition-colors bg-white font-['Figtree',sans-serif]">
+              <span className="font-semibold text-[16px] leading-[170%] tracking-[-0.2px] text-[#0A0400]">
                 Mehr erfahren
               </span>
-            </button>
+            </Link>
           </div>
         </div>
 

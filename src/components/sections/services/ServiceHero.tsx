@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
+
 export const ServiceHero: React.FC = () => {
   return (
     <section className="w-full flex bg-[#FBFAF8] justify-center pt-[80px]  lg:pt-[191px]  px-4 sm:px-6 lg:px-8 overflow-x-hidden">

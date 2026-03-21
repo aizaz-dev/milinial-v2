@@ -4,10 +4,10 @@ import { ServiceHero } from '@/components/sections/services/ServiceHero'
 import { ServiceSection } from '@/components/sections/services/ServiceSection'
 import { CaseStudySection } from '@/components/sections/services/CaseStudySection'
 import PatientsFirstBookFAQ from '@/components/PatientsFirstBookSite/FAQ'
-import { ServicesHowItWorks } from '@/components/sections/services/ServicesHowItWorks'
 import { Memberships } from '@/components/Memberships'
 import { BottomCTA } from '@/components/sections/services/BottomCTA'
 import { ServicesCTA } from '@/components/sections/services/ServicesCTA'
+import { ServicesHowItWorks } from '@/components/sections/services/ServicesHowItWorksServics'
 
 export const dynamic = 'force-static'
 export const revalidate = 600

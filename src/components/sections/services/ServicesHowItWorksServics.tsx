@@ -114,27 +114,7 @@ export const ServicesHowItWorks: React.FC = () => {
               </div>
             </div>
 
-            {/* Step 4 */}
-            <div className="flex flex-col items-start gap-[24px] lg:gap-[32px] w-full lg:w-[312px]">
-              {/* Number */}
-              <div className="w-[60px] h-[60px] bg-white rounded-[8px] flex justify-center items-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] relative z-10">
-                <span className="font-['Geist',sans-serif] font-medium text-[24px] leading-[140%] tracking-[-0.5px] text-[#373A46]">
-                  4
-                </span>
-              </div>
-
-              {/* Text */}
-              <div className="flex flex-col items-start gap-[12px]">
-                <h3 className="font-['Inter',sans-serif] font-semibold text-[24px] lg:text-[28px] leading-[130%] tracking-[-0.5px] text-[#190D00] m-0">
-                  Verankern
-                </h3>
-                <p className="font-['Inter',sans-serif] font-normal text-[16px] lg:text-[20px] leading-[170%] tracking-[-0.4px] text-[#190D00] opacity-80 m-0">
-                  Nachhaltige Strukturen, Routinen und klare
-                  Verantwortlichkeiten werden etabliert, sodass die Umsetzung
-                  stabil weiterläuft – auch ohne laufende Begleitung.
-                </p>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>

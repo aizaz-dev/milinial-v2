@@ -31,7 +31,6 @@ const Header = () => {
                     <Link href="/" className="hover:text-black/70 transition-colors font-manrope">Home</Link>
                     <Link href="/services" className="hover:text-black/70 transition-colors font-manrope">Angebot</Link>
                     <Link href="/about" className="hover:text-black/70 transition-colors font-manrope">Über uns</Link>
-                    <Link href="/how-we-work" className="hover:text-black/70 transition-colors font-manrope">So arbeiten wir</Link>
                     <Link href="/blogs" className="hover:text-black/70 transition-colors font-manrope">Blog</Link>
                     <Link href="/kontakt" className="hover:text-black/70 transition-colors font-manrope">Kontakt</Link>
                 </nav>
@@ -78,7 +77,7 @@ const Header = () => {
                             Home
                         </Link>
                         <Link
-                            href="/patients-first-book-site"
+                            href="/services"
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="w-full border-b border-gray-100 pb-4 font-medium text-gray-800 hover:text-black"
                         >
@@ -90,13 +89,6 @@ const Header = () => {
                             className="w-full border-b border-gray-100 pb-4 font-medium text-gray-800 hover:text-black"
                         >
                             Über uns
-                        </Link>
-                        <Link
-                            href="/how-we-work"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="w-full border-b border-gray-100 pb-4 font-medium text-gray-800 hover:text-black"
-                        >
-                            So arbeiten wir
                         </Link>
                         <Link
                             href="/blogs"

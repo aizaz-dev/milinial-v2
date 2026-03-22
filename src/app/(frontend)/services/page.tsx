@@ -32,7 +32,7 @@ export default function ServicesPage() {
             Drei Services – ein gemeinsamer Kern
           </h2>
           {/* Subheader */}
-          <p className="font-['Inter',sans-serif] font-medium text-[16px] leading-[170%] text-center text-[#4B4B56] m-0 max-w-[802px]">
+          <p className="font-['Inter',sans-serif] font-medium text-[16px] leading-[170%] text-center text-[#4C5157] m-0 max-w-[802px]">
             Drei Service-Linien für KMU & Mid-Market: Stabilisieren, integrieren, transformieren – strukturiert, umsetzungsstark, verlässlich.
           </p>
         </div>

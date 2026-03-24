@@ -3,10 +3,21 @@ import type { Metadata } from 'next/types'
 import { BookPromo } from '@/components/BookPromo'
 import { Memberships } from '@/components/Memberships'
 
-export const dynamic = 'force-static'
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import RichText from '@/components/RichText'
+
 export const revalidate = 600
 
-export default function ImpressumPage() {
+export default async function ImpressumPage() {
+  const payload = await getPayload({ config: configPromise })
+  const result = await payload.find({
+    collection: 'legal-pages',
+    where: { slug: { equals: 'impressum' } },
+    depth: 1,
+  })
+
+  const doc = result.docs[0]
   return (
     <div className="bg-white text-foreground">
       {/* ── HERO SECTION ── */}
@@ -24,10 +35,10 @@ export default function ImpressumPage() {
             }}
           />
 
-          <div className="relative z-10 flex flex-col items-center text-center mx-auto gap-[13px] max-w-[892px]">
+          <div className="relative z-10 flex flex-col items-center text-center mx-auto gap-[30px] max-w-[892px]">
             {/* Eyebrow Badge */}
             <span
-              className="inline-flex items-center px-[10px] py-[10px] rounded-[54px] font-['Inter',sans-serif] font-normal text-[16px] leading-[170%] tracking-[-0.2px] text-white"
+              className="inline-flex items-center px-4 py-1.5 rounded-full font-['Inter',sans-serif] font-normal text-[16px] leading-[170%] tracking-[-0.2px] text-white"
               style={{ background: '#7063AA' }}
             >
               Unser &quot;Kleingedrucktes&quot;
@@ -35,16 +46,16 @@ export default function ImpressumPage() {
 
             {/* Heading */}
             <h1
-              className="font-['Inter',sans-serif] font-medium text-[40px] md:text-[64px] leading-[110%] tracking-[-2px] md:tracking-[-3px] text-center text-white m-0"
+              className="font-['Inter',sans-serif] font-medium text-[36px] md:text-[64px] leading-[110%] tracking-[-1px] md:tracking-[-3px] text-center text-white m-0"
             >
-              Impressum &amp; Datenschutz
+              {doc?.title || 'Impressum & Datenschutz'}
             </h1>
 
             {/* Subheadline */}
             <p
               className="max-w-[794px] font-['Inter',sans-serif] font-light text-[22px] md:text-[40px] leading-[110%] tracking-[-2px] md:tracking-[-3px] text-center text-white m-0"
             >
-              Alle rechtlichen Angaben und Informationen zum Umgang mit personenbezogenen Daten auf einen Blick.
+              {doc?.subtitle || 'Alle rechtlichen Angaben und Informationen zum Umgang mit personenbezogenen Daten auf einen Blick.'}
             </p>
           </div>
         </div>
@@ -55,42 +66,34 @@ export default function ImpressumPage() {
   <div className="w-full max-w-[900px] flex flex-col">
 
     {/* Last Update */}
-    <p className="text-[#4C5157] text-[14px] mb-[40px]">
-      Letztes Update: 22. März 2026
-    </p>
+    {doc?.lastUpdate && (
+      <p className="text-[#4C5157] text-[14px] mb-[40px]">
+        Letztes Update:{' '}
+        {new Date(doc.lastUpdate).toLocaleDateString('de-DE', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </p>
+    )}
 
     {/* Title */}
     <h2 className="text-[28px] md:text-[32px] font-semibold text-[#4C5157] mb-[40px]">
-      Impressum
+      {doc?.title || 'Impressum'}
     </h2>
 
     {/* Content */}
     <div className="text-[#4C5157] text-[16px] md:text-[18px] leading-[160%] flex flex-col gap-[32px]">
-
-      {/* Block 1 */}
-      <div className="flex flex-col gap-[12px]">
-        <h3 className="font-semibold text-[#4C5157]">
-          Herausgeber dieses Internet-Auftritts
-        </h3>
-        <p>
-          Millennial C KLG<br />
-          Postanschrift<br />
-          Eichenheimweg 1, 5015 Erlinsbach, Solothurn
-        </p>
-      </div>
-
-      {/* Block 2 */}
-      <div className="flex flex-col gap-[12px]">
-        <h3 className="font-semibold text-[#4C5157]">
-          Kontakt
-        </h3>
-        <p>
-          E-Mail: p.juchli [ät] millennial-c.com<br />
-          Telefon: +41 32 512 25 61<br />
-          Vertreten durch: Philipp Juchli
-        </p>
-      </div>
-
+      {doc?.content ? (
+        <RichText
+          data={doc.content}
+          enableGutter={false}
+          enableProse={false}
+          className="prose max-w-none text-[#4C5157] text-[16px] md:text-[18px] leading-[160%] prose-headings:font-semibold prose-headings:text-[#4C5157] prose-h3:text-[16px] md:prose-h3:text-[18px] prose-h3:mt-[32px] prose-h3:mb-[12px] prose-h2:mt-[32px] prose-h2:mb-[12px] prose-p:text-[#4C5157] prose-p:mt-0 prose-p:mb-[12px] first:prose-headings:mt-0"
+        />
+      ) : (
+        <p>Inhalte werden geladen oder sind noch nicht verfügbar.</p>
+      )}
     </div>
   </div>
 </div>

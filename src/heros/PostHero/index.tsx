@@ -8,7 +8,7 @@ export const PostHero: React.FC<{
   const { heroImage, title } = post
 
   return (
-    <div className="container px-4 md:px-8 mt-4 md:mt-12 mb-8 md:mb-16 flex justify-center">
+    <div className="px-4 md:px-8 flex justify-center pt-[120px] lg:pt-[140px] mb-8 md:mb-16">
       <div 
         className="relative flex flex-col items-center justify-center text-center overflow-hidden w-full max-w-[1320px] min-h-[400px] md:min-h-[585px] rounded-tr-[16px] rounded-bl-[16px] py-[60px] md:py-[81px] px-[20px] lg:px-[214px] gap-[10px]"
       >

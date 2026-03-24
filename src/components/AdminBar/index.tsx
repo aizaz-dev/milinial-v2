@@ -43,12 +43,20 @@ export const AdminBar: React.FC<{
   const router = useRouter()
 
   const onAuthChange = React.useCallback((user: PayloadMeUser) => {
-    setShow(Boolean(user?.id))
+    const isLogged = Boolean(user?.id)
+    setShow(isLogged)
+    if (typeof window !== 'undefined') {
+      if (isLogged) {
+        document.body.classList.add('admin-logged-in')
+      } else {
+        document.body.classList.remove('admin-logged-in')
+      }
+    }
   }, [])
 
   return (
     <div
-      className={cn(baseClass, 'py-2 bg-black text-white', {
+      className={cn(baseClass, 'py-2 bg-black text-white relative z-9999', {
         block: show,
         hidden: !show,
       })}
@@ -61,6 +69,9 @@ export const AdminBar: React.FC<{
             controls: 'font-medium text-white',
             logo: 'text-white',
             user: 'text-white',
+          }}
+          createProps={{
+            style: { display: 'none' }, // Hides the "New Page" button
           }}
           cmsURL={getClientSideURL()}
           collectionSlug={collection}

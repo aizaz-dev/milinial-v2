@@ -75,7 +75,7 @@ export default async function Post({ params: paramsPromise }: Args) {
   }
 
   return (
-    <article className="pt-4 md:pt-11 bg-white">
+    <article className="bg-white">
       <PageClient />
 
       {/* Allows redirects for valid pages too */}

@@ -249,3 +249,13 @@ html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
 }
+
+/* Push Fixed Header Down When Payload Admin Bar is Visible */
+body.admin-logged-in header {
+  top: 30px !important;
+}
+
+/* Ensure mobile menu accounts for AdminBar too if needed */
+body.admin-logged-in .mobile-menu-drawer {
+  top: 30px !important;
+}

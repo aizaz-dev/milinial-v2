@@ -32,14 +32,14 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${scrolled
-                    ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm'
-                    : 'bg-transparent! border-b border-transparent'
+            className={`fixed top-0 left-0 right-0 z-30 w-full transition-all duration-300 ${scrolled
+                ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm'
+                : 'bg-transparent! border-b border-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
                 {/* Logo */}
-                <div className="shrink-0 z-50">
+                <div className="shrink-0 z-30">
                     <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
                         <Image
                             src="/logo.png"
@@ -87,7 +87,7 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Hamburger Button */}
-                <div className="lg:hidden z-50">
+                <div className="lg:hidden z-30">
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="p-2 text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
@@ -104,7 +104,7 @@ const Header = () => {
 
             {/* Mobile Menu Drawer */}
             {isMobileMenuOpen && (
-                <div className="lg:hidden fixed inset-0 z-40 bg-white pt-24 pb-6 px-6 overflow-y-auto flex flex-col h-screen">
+                <div className="mobile-menu-drawer lg:hidden fixed inset-0 z-40 bg-white pt-24 pb-6 px-6 overflow-y-auto flex flex-col h-screen">
                     <nav className="flex flex-col gap-6 text-lg justify-start items-start">
                         {navLinks.map(({ href, label, exact }) => {
                             const active = isActive(href, exact)
@@ -114,8 +114,8 @@ const Header = () => {
                                     href={href}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={`w-full pb-4 font-medium transition-colors ${active
-                                            ? 'text-[#6A4BFA] border-b-2 border-[#6A4BFA]'
-                                            : 'text-gray-800 hover:text-black border-b border-gray-100'
+                                        ? 'text-[#6A4BFA] border-b-2 border-[#6A4BFA]'
+                                        : 'text-gray-800 hover:text-black border-b border-gray-100'
                                         }`}
                                 >
                                     {label}

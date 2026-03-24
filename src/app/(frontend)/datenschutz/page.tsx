@@ -3,10 +3,21 @@ import type { Metadata } from "next/types";
 import { BookPromo } from "@/components/BookPromo";
 import { Memberships } from "@/components/Memberships";
 
-export const dynamic = "force-static";
+import { getPayload } from "payload";
+import configPromise from "@payload-config";
+import RichText from "@/components/RichText";
+
 export const revalidate = 600;
 
-export default function DatenschutzPage() {
+export default async function DatenschutzPage() {
+  const payload = await getPayload({ config: configPromise });
+  const result = await payload.find({
+    collection: "legal-pages",
+    where: { slug: { equals: "datenschutz" } },
+    depth: 1,
+  });
+
+  const doc = result.docs[0];
   return (
     <div className="bg-white text-foreground">
       {/* ── HERO SECTION ── */}
@@ -23,24 +34,23 @@ export default function DatenschutzPage() {
                 "linear-gradient(135deg, rgba(61,53,97,0.75) 0%, rgba(106,75,250,0.45) 100%)",
             }}
           />
-          <div className="relative z-10 flex flex-col items-center text-center mx-auto gap-[13px] max-w-[892px]">
+          <div className="relative z-10 flex flex-col items-center text-center mx-auto gap-[30px] max-w-[892px]">
             {/* Eyebrow Badge */}
             <span
-              className="inline-flex items-center px-[10px] py-[10px] rounded-[54px] font-['Inter',sans-serif] font-normal text-[16px] leading-[170%] tracking-[-0.2px] text-white"
+              className="inline-flex items-center px-4 py-1.5 rounded-full font-['Inter',sans-serif] font-normal text-[16px] leading-[170%] tracking-[-0.2px] text-white"
               style={{ background: "#7063AA" }}
             >
               Unser &quot;Kleingedrucktes&quot;
             </span>
 
             {/* Heading */}
-            <h1 className="font-['Inter',sans-serif] font-medium text-[40px] md:text-[64px] leading-[110%] tracking-[-2px] md:tracking-[-3px] text-center text-white m-0">
-              Datenschutz{" "}
+            <h1 className="font-['Inter',sans-serif] font-medium text-[36px] md:text-[64px] leading-[110%] tracking-[-1px] md:tracking-[-3px] text-center text-white m-0">
+              {doc?.title || "Datenschutz"}
             </h1>
 
             {/* Subheadline */}
             <p className="max-w-[794px] font-['Inter',sans-serif] font-light text-[22px] md:text-[40px] leading-[110%] tracking-[-2px] md:tracking-[-3px] text-center text-white m-0">
-              Angaben und Informationen zum Umgang mit personenbezogenen Daten
-              auf einen Blick.{" "}
+              {doc?.subtitle || "Angaben und Informationen zum Umgang mit personenbezogenen Daten auf einen Blick."}
             </p>
           </div>
         </div>
@@ -81,103 +91,34 @@ export default function DatenschutzPage() {
       "
             >
               {/* Last Update */}
-              <p className="text-[#6B7280] text-[14px] mb-[24px]">
-                Letztes Update: 22. März 2026
-              </p>
+              {doc?.lastUpdate && (
+                <p className="text-[#6B7280] text-[14px] mb-[24px]">
+                  Letztes Update:{" "}
+                  {new Date(doc.lastUpdate).toLocaleDateString("de-DE", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+              )}
 
               {/* Title */}
               <h2 className="text-[30px] font-semibold text-[#333F51] mb-[16px]">
-                Impressum & Datenschutz
+                {doc?.title || "Datenschutz"}
               </h2>
 
               {/* BODY */}
               <div className="flex flex-col gap-[32px] text-[#4C5157] text-[16px] leading-[28px]">
-                {/* Herausgeber */}
-                <div className="flex flex-col gap-[12px]">
-                  <h3 className="font-semibold text-[#333F51]">
-                    Herausgeber dieses Internet-Auftritts
-                  </h3>
-                  <p>
-                    Millennial C<br />
-                    Eichenheimweg 1<br />
-                    5015com Erlinsbach, Solothurn
-                    <br />
-                    p.juchli [ät] millennial-c.com
-                  </p>
-                </div>
-
-                {/* Allgemein */}
-                <div className="flex flex-col gap-[12px]">
-                  <h3 className="font-semibold text-[#333F51]">Allgemein</h3>
-                  <p>
-                    Diese Internetseite (nachfolgend: Website) von Millennial C
-                    (nachfolgend: Millennial C) ist mit grösstmöglicher Sorgfalt
-                    zusammengestellt worden. Die inhaltliche Genauigkeit und
-                    Fehlerfreiheit können indes nicht garantiert werden. Wir
-                    schliessen jegliche Haftung für unzutreffende,
-                    unvollständige oder veraltete Informationen, die sich auf
-                    der Website befinden, aus.
-                  </p>
-                  <p>
-                    Personen, welche die auf der Website der veröffentlichten
-                    Informationen abrufen, erklären sich mit den nachstehenden
-                    Bedingungen einverstanden.
-                  </p>
-                </div>
-
-                {/* Urheberrecht */}
-                <div className="flex flex-col gap-[12px]">
-                  <h3 className="font-semibold text-[#333F51]">Urheberrecht</h3>
-                  <p>
-                    Der gesamte Inhalt der Website ist urheberrechtlich
-                    geschützt. Die Rechte an den Inhalten, Marken, Logos und
-                    anderer Daten auf der Website gehören Millennial C. Das
-                    Herunterladen und Ausdrucken einzelner Seiten oder Bereiche
-                    der Website ist erlaubt, sofern weder die Copyright-Vermerke
-                    noch andere gesetzlich geschützte Bezeichnungen entfernt
-                    noch die heruntergeladenen Original-Daten modifiziert
-                    werden. Als Quelle der Informationen müssen Sie unsere
-                    Webseiten angeben. Sämtliche Rechte verbleiben bei
-                    Millennial C.
-                  </p>
-                  <p>
-                    Das Reproduzieren, Übermitteln (elektronisch oder mit
-                    anderen Mitteln), Modifizieren, Verknüpfen oder Benutzen der
-                    Website für öffentliche oder kommerzielle Zwecke ist ohne
-                    vorgängige schriftliche Zustimmung von Millennial C nicht
-                    erlaubt.
-                  </p>
-                  <p>
-                    Teile dieser Website enthalten Bilder, Fotos und Inhalte
-                    Dritter, die dem Urheber- und Markenrecht unterliegen.
-                    Hierbei gelten die Urheber- und Markenrechte der
-                    rechtmässigen Besitzer.
-                  </p>
-                </div>
-
-                {/* Haftung */}
-                <div className="flex flex-col gap-[12px]">
-                  <h3 className="font-semibold text-[#333F51]">
-                    Haftungsausschluss
-                  </h3>
-                  <p>
-                    Millennial C übernimmt keinerlei Gewähr hinsichtlich der
-                    inhaltlichen Richtigkeit, Genauigkeit, Aktualität,
-                    Zuverlässigkeit und Vollständigkeit der Informationen.
-                    Jegliche Haftungsansprüche gegen Millennial C wegen Schäden
-                    materieller oder immaterieller Art, welche aus dem Zugriff
-                    oder der Nutzung bzw. Nichtnutzung der veröffentlichten
-                    Informationen, durch Missbrauch der Verbindung oder durch
-                    technische Störungen entstanden sind, werden ausgeschlossen.
-                  </p>
-                  <p>
-                    Alle Angebote sind unverbindlich. Millennial C behält sich
-                    ausdrücklich vor, Teile der Seiten oder das gesamte Angebot
-                    ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu
-                    löschen oder die Veröffentlichung zeitweise oder endgültig
-                    einzustellen.
-                  </p>
-                </div>
+                {doc?.content ? (
+                  <RichText
+                    data={doc.content}
+                    enableGutter={false}
+                    enableProse={false}
+                    className="prose max-w-none text-[#4C5157] text-[16px] leading-[28px] prose-headings:font-semibold prose-headings:text-[#333F51] prose-h3:text-[16px] prose-h3:mt-[32px] prose-h3:mb-[12px] prose-h2:mt-[32px] prose-h2:mb-[12px] prose-p:text-[#4C5157] prose-p:mt-0 prose-p:mb-[12px] first:prose-headings:mt-0"
+                  />
+                ) : (
+                  <p>Inhalte werden geladen oder sind noch nicht verfügbar.</p>
+                )}
               </div>
             </div>
           </div>

@@ -45,10 +45,11 @@ export default function Leadership() {
               </span>
             </div>
 
-            <h2 className="font-['Inter',sans-serif] font-semibold text-[36px] lg:text-[57px] leading-[1.2] lg:leading-[120%] tracking-[-1.5px] text-[#181C39] m-0">
-              Führung, die<br className="hidden lg:block"/>Menschen und Zahlen<br className="hidden lg:block"/>zusammenbringt.
-            </h2>
-
+          <h2 className="font-['Inter',sans-serif] font-semibold text-[36px] lg:text-[46px] leading-[1.2] lg:leading-[120%] tracking-[-1.5px] text-[#181C39] m-0">
+  Führung, die<br/>
+  Menschen und Zahlen<br/>
+  zusammenbringt.
+</h2>
             <p className="font-outfit font-normal text-[16px] lg:text-[20px] leading-[1.6] lg:leading-[160%] text-[#5E6075] m-0">
               Wir kennen Restrukturierungen, Turnarounds und Transformationen aus der ersten Reihe: als Interim-COO, Operating Partner und Sparringpartner für Eigentümer und Management. Wir verbinden strategische Klarheit mit konsequenter operativer Umsetzung und stehen in kritischen Phasen selbst in der Verantwortung.
             </p>

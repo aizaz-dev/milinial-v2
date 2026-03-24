@@ -140,4 +140,4 @@ export default async function InsightsSection() {
       </div>
     </section>
   )
-}
+}

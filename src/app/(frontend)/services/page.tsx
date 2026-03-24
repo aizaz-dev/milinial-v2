@@ -1,12 +1,13 @@
 import React from 'react'
+
 import { ServiceHero } from '@/components/sections/services/ServiceHero'
 import { ServiceSection } from '@/components/sections/services/ServiceSection'
 import { CaseStudySection } from '@/components/sections/services/CaseStudySection'
 import PatientsFirstBookFAQ from '@/components/PatientsFirstBookSite/FAQ'
-import { ServicesHowItWorks } from '@/components/sections/services/ServicesHowItWorks'
 import { Memberships } from '@/components/Memberships'
 import { BottomCTA } from '@/components/sections/services/BottomCTA'
 import { ServicesCTA } from '@/components/sections/services/ServicesCTA'
+import { ServicesHowItWorks } from '@/components/sections/services/ServicesHowItWorksServics'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -16,7 +17,6 @@ export default function ServicesPage() {
     <div className="bg-background text-foreground overflow-hidden">
       {/* Hero Section */}
       <ServiceHero />
-
       {/* Section Intro */}
       <section className="w-full bg-[#F5F8FB] pt-[80px] lg:pt-[130px]">
         <div className="flex flex-col items-center gap-[30px] w-full px-6">
@@ -31,7 +31,7 @@ export default function ServicesPage() {
             Drei Services – ein gemeinsamer Kern
           </h2>
           {/* Subheader */}
-          <p className="font-['Inter',sans-serif] font-medium text-[16px] leading-[170%] text-center text-[#4B4B56] m-0 max-w-[802px]">
+          <p className="font-['Inter',sans-serif] font-medium text-[16px] leading-[170%] text-center text-[#4C5157] m-0 max-w-[802px]">
             Drei Service-Linien für KMU & Mid-Market: Stabilisieren, integrieren, transformieren – strukturiert, umsetzungsstark, verlässlich.
           </p>
         </div>

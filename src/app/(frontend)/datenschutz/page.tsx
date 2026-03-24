@@ -16,7 +16,7 @@ export default function DatenschutzPage() {
           style={{ backgroundImage: "url('/assets/legal-page/hero-bg.jpg')" }}
         >
           {/* Dak roverlay for readability */}
-<div
+          <div
             className="absolute inset-0"
             style={{
               background:
@@ -62,7 +62,7 @@ export default function DatenschutzPage() {
         [&::-webkit-scrollbar-track]:rounded-full
         [&::-webkit-scrollbar-thumb]:bg-[#7063AA]
         [&::-webkit-scrollbar-thumb]:rounded-full
-        [&::-webkit-scrollbar-thumb]:border-[2px]
+        [&::-webkit-scrollbar-thumb]:border-2
         [&::-webkit-scrollbar-thumb]:border-[#E5E7EB]
 
         [scrollbar-width:thin]

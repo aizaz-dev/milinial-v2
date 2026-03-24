@@ -62,7 +62,7 @@ export default function AGBPage() {
               [&::-webkit-scrollbar-track]:rounded-full
               [&::-webkit-scrollbar-thumb]:bg-[#7063AA]
               [&::-webkit-scrollbar-thumb]:rounded-full
-              [&::-webkit-scrollbar-thumb]:border-[2px]
+              [&::-webkit-scrollbar-thumb]:border-2
               [&::-webkit-scrollbar-thumb]:border-[#E5E7EB]
 
               [scrollbar-width:thin]
@@ -97,12 +97,12 @@ export default function AGBPage() {
                   <p>
                     1.1. Diese Allgemeinen Geschäftsbedingungen (AGBs) regeln
                     das Rechtsverhältnis zwischen den
-                    (Beratungs-)Dienstleistungsbezügern (nachfolgend "Kunde")
-                    und den Beratungsdienstleistern (im Folgenden "Berater") von
-                    Millennial C (nachfolgend "MC"). Mit der Buchung einer
+                    (Beratungs-)Dienstleistungsbezügern (nachfolgend &quot;Kunde&quot;)
+                    und den Beratungsdienstleistern (im Folgenden &quot;Berater&quot;) von
+                    Millennial C (nachfolgend &quot;MC&quot;). Mit der Buchung einer
                     (Beratungs-)Dienstleistung stimmen beide Vertragsparteien
                     den vorliegenden, allgemeinen Mandats- und
-                    Geschäftsbedingungen (nachfolgend "Bedingungen") zu.
+                    Geschäftsbedingungen (nachfolgend &quot;Bedingungen&quot;) zu.
                   </p>
 
                   <p>
@@ -121,7 +121,7 @@ export default function AGBPage() {
 
                   <p>
                     1.4. Die Geltungsdauer dieser AGBs ist auf die Zeit des
-                    jeweiligen Beratungseinsatzes (sog. "Assignments" inklusive)
+                    jeweiligen Beratungseinsatzes (sog. &quot;Assignments&quot; inklusive)
                     beschränkt. Der Kunde ist nicht verpflichtet, den Beratern
                     weitere Einsätze anzubieten bzw. mit ihm weitere
                     Einsatzverträge abzuschliessen. Ebenso ist der Berater nicht

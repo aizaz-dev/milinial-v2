@@ -46,20 +46,20 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-[420px]">
-            <button onClick={openModal} className="flex flex-row items-center justify-center px-[16px] py-[8px] w-full sm:flex-1 h-[54px] bg-[#2905C7] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1)] hover:opacity-90 transition-opacity relative font-['Figtree',sans-serif] cursor-pointer">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-[290px] sm:w-auto max-w-full mx-auto mt-4">
+            <button onClick={openModal} className="flex flex-row items-center justify-between pl-[24px] pr-[8px] py-[8px] w-full sm:w-auto h-[54px] bg-[#1a037f] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1)] hover:opacity-90 transition-opacity relative font-['Figtree',sans-serif] cursor-pointer">
               <div className="absolute inset-0 rounded-[16px] pointer-events-none" style={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))' }} />
-              <span className="font-semibold text-[15px] leading-[170%] tracking-[-0.2px] text-[#FFFFFF] relative z-10 pr-12 text-center">
+              <span className="font-semibold text-[15px] leading-[170%] tracking-[-0.2px] text-[#FFFFFF] relative z-10 whitespace-nowrap">
                 Jetzt Erstgespräch buchen
               </span>
-              <div className="absolute right-[8px] flex items-center justify-center w-[38px] h-[38px] bg-[#FFFFFF] rounded-[12px] z-10 shrink-0">
+              <div className="flex items-center justify-center w-[38px] h-[38px] bg-[#FFFFFF] rounded-[12px] shadow-[0px_2px_4px_rgba(0,0,0,0.05)] ml-[8px] relative z-10 shrink-0">
                 <svg className="w-[16px] h-[16px] text-[#666666] transform -rotate-45" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </button>
 
-            <Link href="/about" className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-full sm:w-[149px] h-[55px] border border-[#19037C] rounded-[16px] hover:bg-black/5 transition-colors bg-white font-['Figtree',sans-serif]">
+            <Link href="/about" className="flex flex-row justify-center items-center px-[28px] py-[8px] w-full sm:w-auto h-[54px] border border-[#19037C] rounded-[16px] hover:bg-black/5 transition-colors bg-white font-['Figtree',sans-serif]">
               <span className="font-semibold text-[15px] leading-[170%] tracking-[-0.2px] text-[#0A0400]">
                 Mehr erfahren
               </span>
@@ -109,12 +109,12 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="absolute w-full h-[55px] left-0 top-[324px] flex justify-center gap-[20px]">
-            <button onClick={openModal} className="flex flex-row justify-center items-center px-[16px] py-[8px] gap-[12px] w-[273px] h-[54.63px] bg-[#2905C7] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1),0px_19px_19px_rgba(0,0,0,0.09),0px_42px_25px_rgba(0,0,0,0.05)] hover:opacity-90 transition-opacity relative ml-[-38px] font-['Figtree',sans-serif]">
+            <button onClick={openModal} className="inline-flex flex-row justify-between items-center pl-[24px] pr-[8px] py-[8px] w-auto h-[55px] bg-[#1a037f] rounded-[16px] shadow-[0px_5px_10px_rgba(0,0,0,0.1)] hover:opacity-90 transition-opacity relative font-['Figtree',sans-serif] cursor-pointer">
               <div className="absolute inset-0 rounded-[16px] pointer-events-none" style={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))' }} />
-              <span className="font-semibold text-[16px] leading-[170%] tracking-[-0.2px] text-[#FFFFFF] relative z-10 w-[199px] text-left">
+              <span className="font-semibold text-[16px] leading-[170%] tracking-[-0.2px] text-[#FFFFFF] relative z-10 whitespace-nowrap">
                 Jetzt Erstgespräch buchen
               </span>
-              <div className="flex items-center justify-center w-[38.63px] h-[38.63px] bg-[#FFFFFF] rounded-[12px] relative z-10">
+              <div className="flex items-center justify-center w-[39px] h-[39px] bg-[#FFFFFF] rounded-[12px] shadow-[0px_2px_4px_rgba(0,0,0,0.05)] ml-[16px] relative z-10 shrink-0">
                 <svg className="w-[16px] h-[16px] text-[#666666] transform -rotate-45" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

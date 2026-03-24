@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 
 export const Memberships: React.FC = () => {
   const logos = [
@@ -27,9 +28,11 @@ export const Memberships: React.FC = () => {
           <div className="w-full flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-between gap-x-4 gap-y-5">
             {logos.map((logo, index) => (
               <div key={index} className="flex items-center justify-center w-[calc(33.33%-12px)] sm:w-[calc(25%-12px)] lg:w-auto lg:flex-1">
-                <img
+                <Image
                   src={logo}
                   alt={`Partner Logo ${index + 1}`}
+                  width={140}
+                  height={45}
                   className="object-contain h-auto max-h-[28px] sm:max-h-[34px] lg:max-h-[45px] max-w-[90px] sm:max-w-[110px] lg:max-w-[140px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease"
                 />
               </div>

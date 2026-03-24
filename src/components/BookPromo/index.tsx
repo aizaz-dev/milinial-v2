@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 export const BookPromo: React.FC = () => {
   return (
@@ -34,9 +35,11 @@ export const BookPromo: React.FC = () => {
 
           {/* Right Image */}
           <div className="flex-1 flex justify-center items-center h-full min-h-[250px] md:min-h-[400px] lg:min-h-full pb-8 md:pb-0">
-            <img
+            <Image
               src="/blog/right-book.png"
               alt="Patience First Book"
+              width={700}
+              height={700}
               className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[500px] xl:max-w-[700px] object-contain md:scale-[1.15] origin-center md:origin-right transform"
             />
           </div>

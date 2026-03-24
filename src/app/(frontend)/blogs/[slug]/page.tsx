@@ -7,6 +7,7 @@ import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import RichText from '@/components/RichText'
 
 import type { Blog } from '@/payload-types'
@@ -116,12 +117,13 @@ export default async function Post({ params: paramsPromise }: Args) {
                 <>
                   {authorImageSrc && (
                     <div
-                      className="w-[50px] md:w-[67.61px] h-[50px] md:h-[56px] rounded-full overflow-hidden mr-3 md:mr-4 bg-gray-200 shrink-0"
+                      className="relative w-[50px] md:w-[67.61px] h-[50px] md:h-[56px] rounded-full overflow-hidden mr-3 md:mr-4 bg-gray-200 shrink-0"
                     >
-                      <img
+                      <Image
                         src={authorImageSrc}
                         alt={authorName}
-                        className="w-full h-full object-cover shrink-0"
+                        fill
+                        className="object-cover"
                       />
                     </div>
                   )}

@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 const PatientsFirstBookHero = () => {
   return (
-    <section className="bg-[#FBFAF8] w-full px-4 md:px-8 xl:px-14 pt-8 xl:pt-16 pb-12 overflow-hidden">
+    <section className="bg-[#FBFAF8] w-full px-4 md:px-8 xl:px-14 pt-[120px] lg:pt-[140px] pb-12 overflow-hidden">
       <div
         className="max-w-[1320px] mx-auto w-full xl:h-[585px] rounded-tr-[16px] rounded-bl-[16px] overflow-hidden relative flex flex-col justify-start px-6 py-[50px] md:px-[40px] md:py-[80px] xl:px-[48px] xl:pt-[139px] xl:pb-[139px]"
         style={{

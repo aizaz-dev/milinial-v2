@@ -42,9 +42,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             }}
           />
 
-          <Header />
-          {children}
-          <Footer />
+          <div className="relative">
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

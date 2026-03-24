@@ -11,6 +11,7 @@ export interface BottomCTAProps {
   description?: React.ReactNode
   imageSrc?: string
   primaryButtonText?: string
+  primaryButtonHref?: string   // optional – if omitted, triggers booking modal
   secondaryButtonText?: string
   secondaryButtonHref?: string
 }
@@ -20,6 +21,7 @@ export const BottomCTA: React.FC<BottomCTAProps> = ({
   description = "Bei Restrukturierungen, Integrationen und Transformationen stehen wir zur Verfügung – diskret, strukturiert und umsetzungsnah, damit Steuerung und Verankerung im Alltag funktionieren.",
   imageSrc = "/assets/services/girl-standing.png",
   primaryButtonText = "Jetzt Erstgespräch buchen",
+  primaryButtonHref,           // undefined by default → modal
   secondaryButtonText = "Angebot anfragen",
   secondaryButtonHref = "/kontakt",
 }) => {
@@ -54,16 +56,29 @@ export const BottomCTA: React.FC<BottomCTAProps> = ({
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-[14px]">
-            <button
-              onClick={openModal}
-              className="inline-flex flex-row items-center justify-between sm:justify-start pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
-              style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
-            >
-              <span>{primaryButtonText}</span>
-              <span className="w-[34px] h-[34px] bg-white rounded-[10px] flex items-center justify-center shrink-0">
-                <ArrowUpRight className="w-[14px] h-[14px] text-[#120485]" strokeWidth={2} />
-              </span>
-            </button>
+            {primaryButtonHref ? (
+              <Link
+                href={primaryButtonHref}
+                className="inline-flex flex-row items-center justify-between sm:justify-start pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
+                style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
+              >
+                <span>{primaryButtonText}</span>
+                <span className="w-[34px] h-[34px] bg-white rounded-[10px] flex items-center justify-center shrink-0">
+                  <ArrowUpRight className="w-[14px] h-[14px] text-[#120485]" strokeWidth={2} />
+                </span>
+              </Link>
+            ) : (
+              <button
+                onClick={openModal}
+                className="inline-flex flex-row items-center justify-between sm:justify-start pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
+                style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
+              >
+                <span>{primaryButtonText}</span>
+                <span className="w-[34px] h-[34px] bg-white rounded-[10px] flex items-center justify-center shrink-0">
+                  <ArrowUpRight className="w-[14px] h-[14px] text-[#120485]" strokeWidth={2} />
+                </span>
+              </button>
+            )}
             <Link
               href={secondaryButtonHref}
               className="inline-flex items-center justify-center px-[20px] py-[12px] gap-[10px] rounded-[16px] border border-white font-['Inter',sans-serif] font-semibold text-[15px] sm:text-[17px] leading-[170%] text-white shrink-0 hover:bg-white hover:text-[#897ADB] transition-all"
@@ -97,16 +112,29 @@ export const BottomCTA: React.FC<BottomCTAProps> = ({
 
             <div className="flex flex-row items-center gap-[16px]">
               {/* Primary */}
-              <button
-                onClick={openModal}
-                className="inline-flex flex-row items-center pl-[20px] pr-[8px] py-[9px] gap-[12px] rounded-[12px] font-figtree font-semibold text-[18px] leading-[150%] tracking-[-0.2px] text-white hover:opacity-90 transition-opacity shrink-0 cursor-pointer"
-                style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
-              >
-                <span className="whitespace-nowrap">{primaryButtonText}</span>
-                <span className="w-[32px] h-[32px] bg-white rounded-[8px] flex items-center justify-center shrink-0">
-                  <ArrowUpRight className="w-[16px] h-[16px] text-[#120485]" strokeWidth={2} />
-                </span>
-              </button>
+              {primaryButtonHref ? (
+                <Link
+                  href={primaryButtonHref}
+                  className="inline-flex flex-row items-center pl-[20px] pr-[8px] py-[9px] gap-[12px] rounded-[12px] font-figtree font-semibold text-[18px] leading-[150%] tracking-[-0.2px] text-white hover:opacity-90 transition-opacity shrink-0 cursor-pointer"
+                  style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
+                >
+                  <span className="whitespace-nowrap">{primaryButtonText}</span>
+                  <span className="w-[32px] h-[32px] bg-white rounded-[8px] flex items-center justify-center shrink-0">
+                    <ArrowUpRight className="w-[16px] h-[16px] text-[#120485]" strokeWidth={2} />
+                  </span>
+                </Link>
+              ) : (
+                <button
+                  onClick={openModal}
+                  className="inline-flex flex-row items-center pl-[20px] pr-[8px] py-[9px] gap-[12px] rounded-[12px] font-figtree font-semibold text-[18px] leading-[150%] tracking-[-0.2px] text-white hover:opacity-90 transition-opacity shrink-0 cursor-pointer"
+                  style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
+                >
+                  <span className="whitespace-nowrap">{primaryButtonText}</span>
+                  <span className="w-[32px] h-[32px] bg-white rounded-[8px] flex items-center justify-center shrink-0">
+                    <ArrowUpRight className="w-[16px] h-[16px] text-[#120485]" strokeWidth={2} />
+                  </span>
+                </button>
+              )}
               {/* Secondary */}
               <Link
                 href={secondaryButtonHref}

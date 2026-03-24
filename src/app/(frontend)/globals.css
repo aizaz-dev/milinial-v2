@@ -5,11 +5,11 @@
 @config '../../../tailwind.config.mjs';
 
 @custom-variant dark (&:is([data-theme='dark'] *));
-@custom-variant sm (@media (width >= theme(--breakpoint-sm)));
-@custom-variant md (@media (width >= theme(--breakpoint-md)));
-@custom-variant lg (@media (width >= theme(--breakpoint-lg)));
-@custom-variant xl (@media (width >= theme(--breakpoint-xl)));
-@custom-variant 2xl (@media (width >= theme(--breakpoint-2xl)));
+@custom-variant sm (@media (width >=theme(--breakpoint-sm)));
+@custom-variant md (@media (width >=theme(--breakpoint-md)));
+@custom-variant lg (@media (width >=theme(--breakpoint-lg)));
+@custom-variant xl (@media (width >=theme(--breakpoint-xl)));
+@custom-variant 2xl (@media (width >=theme(--breakpoint-2xl)));
 
 @layer base {
   h1,
@@ -46,12 +46,17 @@
   --breakpoint-2xl: 86rem;
   --font-mono: var(--font-geist-mono);
   /* Default sans font */
-  --font-sans: 'Manrope', sans-serif;
+  --font-sans: 'Manrope',
+  sans-serif;
   /* Custom Font Variables */
-  --font-manrope: 'Manrope', sans-serif;
-  --font-outfit: 'Outfit', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-stacksans: 'Stack Sans Text', sans-serif;
+  --font-manrope: 'Manrope',
+  sans-serif;
+  --font-outfit: 'Outfit',
+  sans-serif;
+  --font-poppins: 'Poppins',
+  sans-serif;
+  --font-stacksans: 'Stack Sans Text',
+  sans-serif;
   --font-geist: var(--font-geist-sans);
   --font-geist-mono: var(--font-geist-mono);
   --font-figtree: var(--font-figtree);
@@ -220,19 +225,24 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+    @apply bg-background text-foreground min-h-screen flex flex-col;
   }
+
   button {
     font-family: var(--font-figtree);
   }
-  button, a {
+
+  button,
+  a {
     cursor: pointer;
   }
 }
 
 html {
   opacity: 0;
+  scroll-behavior: smooth;
 }
 
 html[data-theme='dark'],

@@ -10,7 +10,7 @@ export default function ImpressumPage() {
   return (
     <div className="bg-white text-foreground">
       {/* ── HERO SECTION ── */}
-      <div className="px-4 md:px-8 flex justify-center pt-10 md:pt-24 pb-12">
+      <div className="px-4 md:px-8 flex justify-center pt-[120px] lg:pt-[140px] pb-12">
         <div
           className="relative flex items-center justify-center overflow-hidden w-full max-w-[1320px] min-h-[400px] md:min-h-[585px] bg-cover bg-center rounded-tr-[16px] rounded-bl-[16px] px-6 md:px-12"
           style={{ backgroundImage: "url('/assets/legal-page/hero-bg.jpg')" }}

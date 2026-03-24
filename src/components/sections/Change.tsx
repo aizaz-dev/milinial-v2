@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function ChangeSection() {
   return (
-    <section className="w-full bg-[#FBFAF8] py-12 md:py-20 overflow-hidden">
+    <section className="w-full bg-[#FBFAF8] pt-[120px] lg:pt-[140px] pb-12 md:pb-20 overflow-hidden">
       <div className="max-w-[1320px] mx-auto px-4 md:px-6 xl:px-0">
         
         {/* Title Container */}

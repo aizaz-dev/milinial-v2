@@ -75,7 +75,7 @@ export const ContactForm: React.FC = () => {
     "font-['Inter',sans-serif] font-medium text-[14px] leading-[170%] tracking-[0.02em] text-[#1E1A1C] mb-[8px] block"
 
   return (
-    <section className="w-full bg-white py-[70px]">
+    <section id="kontakt-form" className="w-full bg-white py-[70px] scroll-mt-24">
       <div className="w-full max-w-[1320px] mx-auto px-6 lg:px-[60px]">
 
         {/* ── TITLE BLOCK — centered, max-w 910px ── */}

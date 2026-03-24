@@ -8,7 +8,7 @@ const instrumentSerif = Instrument_Serif({
 
 export default function HeroSection() {
   return (
-    <section className="w-full bg-[#FBFAF8] pt-[80px] lg:pt-[120px] pb-0 overflow-hidden">
+    <section className="w-full bg-[#FBFAF8] pt-[120px] lg:pt-[140px] pb-0 overflow-hidden">
       <div className="max-w-[1320px] mx-auto px-6 lg:px-[60px]">
 
         {/* ── Title block (Eyebrow + Headline + Subheadline) ── */}

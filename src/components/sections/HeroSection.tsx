@@ -21,7 +21,7 @@ export const HeroSection: React.FC<HeroProps> = ({
   className,
 }) => {
   return (
-    <section className={cn('container mb-24 pt-24', className)}>
+    <section className={cn('container mb-24 pt-[120px] lg:pt-[140px]', className)}>
       <div className="mb-6">
         <Badge
           variant="secondary"
@@ -43,7 +43,7 @@ export const HeroSection: React.FC<HeroProps> = ({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-        <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-muted">
+        <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-muted">
           <Image
             alt={image1.alt}
             src={image1.src}
@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroProps> = ({
             priority
           />
         </div>
-        <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-muted">
+        <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-muted">
           <Image
             alt={image2.alt}
             src={image2.src}

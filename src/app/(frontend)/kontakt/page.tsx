@@ -16,7 +16,7 @@ export default function KontaktPage() {
     <main className="w-full bg-white min-h-screen overflow-x-hidden">
 
       {/* ── HERO SECTION (text + images in one unified block) ── */}
-      <section className="w-full bg-white pt-[60px] lg:pt-[100px]">
+      <section className="w-full bg-white pt-[120px] lg:pt-[140px]">
 
         {/* ── TEXT BLOCK — constrained to 1320px ── */}
         <div className="w-full max-w-[1320px] mx-auto px-6 lg:px-[60px] pb-[3bn0px] lg:pb-[30px]">

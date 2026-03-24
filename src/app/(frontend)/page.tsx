@@ -27,7 +27,7 @@ export default async function Page() {
       <div className="pt-12">
         <BookPromo />
       </div>
-      <Memberships />hii
+      <Memberships />
     </div>
   )
 }

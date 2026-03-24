@@ -23,11 +23,8 @@ export const Memberships: React.FC = () => {
             Mitglied von:
           </span>
 
-          {/* Logos — grid spreads across full remaining width */}
-          <div
-            className="w-full grid items-center"
-            style={{ gridTemplateColumns: `repeat(${logos.length}, 1fr)` }}
-          >
+          {/* Logos */}
+          <div className="w-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 items-center gap-y-6 md:gap-y-0">
             {logos.map((logo, index) => (
               <div key={index} className="flex items-center justify-center">
                 <img

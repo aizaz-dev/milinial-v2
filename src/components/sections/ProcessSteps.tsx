@@ -1,6 +1,8 @@
+'use client'
+
 import React from "react"
-import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { useBooking } from "@/providers/Booking"
 
 interface Step {
   title: string
@@ -13,6 +15,7 @@ interface ProcessStepsProps {
 }
 
 export const ProcessSteps: React.FC<ProcessStepsProps> = ({ steps }) => {
+  const { openModal } = useBooking()
   return (
     <section className="w-full bg-[#F7F7F6] py-24">
       <div className="max-w-6xl mx-auto px-6">
@@ -47,7 +50,7 @@ export const ProcessSteps: React.FC<ProcessStepsProps> = ({ steps }) => {
           </div>
 
           {/* horizontal line */}
-          <div className="absolute top-6 left-0 w-full h-[1px] bg-gray-300"></div>
+          <div className="absolute top-6 left-0 w-full h-px bg-gray-300"></div>
 
           <div className="grid md:grid-cols-4 gap-10 relative">
 
@@ -86,13 +89,13 @@ export const ProcessSteps: React.FC<ProcessStepsProps> = ({ steps }) => {
 
         {/* button */}
         <div className="flex justify-center mt-8">
-          <Link
-            href="/contact"
-            className="flex items-center gap-3 bg-[#2B1E78] text-white px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition"
+          <button
+            onClick={openModal}
+            className="flex items-center gap-3 bg-[#2B1E78] text-white px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition cursor-pointer"
           >
             LbC-Erstgespräch buchen
             <ArrowUpRight size={18} />
-          </Link>
+          </button>
         </div>
 
       </div>

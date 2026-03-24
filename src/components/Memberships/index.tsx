@@ -17,7 +17,7 @@ export const Memberships: React.FC = () => {
     <div className="w-full mx-auto my-12 border-t border-b border-gray-200">
       <div className="w-full max-w-[1440px] mx-auto py-8 px-6 lg:px-[50px]">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0 w-full">
-          
+
           {/* Label */}
           <span className="shrink-0 font-sans font-medium text-[16px] leading-[170%] text-[#767676] whitespace-nowrap text-center md:text-left md:pr-[48px]">
             Mitglied von:

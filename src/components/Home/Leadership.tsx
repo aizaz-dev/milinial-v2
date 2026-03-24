@@ -15,8 +15,8 @@ export default function Leadership() {
         <div className="absolute left-[53.29%] right-[0.67%] top-[45.59%] bottom-[23.64%] bg-[rgba(235,230,254,0.1)]" />
       </div>
 
-      {/* brand-pattern 1 */}
-      <div className="absolute w-[454px] h-[406px] left-[1067px] top-[-49px] pointer-events-none hidden xl:block" style={{ transform: 'matrix(-1, 0, 0, 1, 0, 0)' }}>
+      {/* brand-pattern 1 - FIXED: right-0 instead of left-[1067px] */}
+      <div className="absolute w-[454px] h-[406px] right-0 top-[-49px] pointer-events-none hidden xl:block" style={{ transform: 'matrix(-1, 0, 0, 1, 0, 0)' }}>
         <div className="absolute left-[0.93%] right-[37.14%] top-[59.09%] bottom-[1.02%] bg-[rgba(235,230,254,0.15)]" style={{ transform: 'matrix(-1, 0, 0, 1, 0, 0)' }} />
         <div className="absolute left-[35.44%] right-[0.89%] top-[29.49%] bottom-[29.51%] bg-[rgba(235,230,254,0.15)]" style={{ transform: 'matrix(-1, 0, 0, 1, 0, 0)' }} />
         <div className="absolute left-[0.93%] right-[37.14%] top-[1%] bottom-[59.11%] bg-[rgba(235,230,254,0.15)]" style={{ transform: 'matrix(-1, 0, 0, 1, 0, 0)' }} />
@@ -45,11 +45,12 @@ export default function Leadership() {
               </span>
             </div>
 
-          <h2 className="font-['Inter',sans-serif] font-semibold text-[36px] lg:text-[46px] leading-[1.2] lg:leading-[120%] tracking-[-1.5px] text-[#181C39] m-0">
-  Führung, die<br/>
-  Menschen und Zahlen<br/>
-  zusammenbringt.
-</h2>
+            <h2 className="font-['Inter',sans-serif] font-semibold text-[36px] lg:text-[46px] leading-[1.2] lg:leading-[120%] tracking-[-1.5px] text-[#181C39] m-0">
+              Führung, die<br/>
+              Menschen und Zahlen<br/>
+              zusammenbringt.
+            </h2>
+
             <p className="font-outfit font-normal text-[16px] lg:text-[20px] leading-[1.6] lg:leading-[160%] text-[#5E6075] m-0">
               Wir kennen Restrukturierungen, Turnarounds und Transformationen aus der ersten Reihe: als Interim-COO, Operating Partner und Sparringpartner für Eigentümer und Management. Wir verbinden strategische Klarheit mit konsequenter operativer Umsetzung und stehen in kritischen Phasen selbst in der Verantwortung.
             </p>

@@ -23,7 +23,7 @@ export default function Page() {
       <ServicesCTA
         title="Ist Ihr Übergang sauber gesteuert – oder nur „irgendwie in Arbeit“?"
         description="Wir bringen Klarheit in Ziele, Verantwortungen und Taktung – damit Fortschritt sichtbar wird."
-        imageSrc="/assets/about/team.png"
+        imageSrc="/assets/about/team2.png"
         primaryButtonText="Jetzt Erstgespräch buchen"
         primaryButtonHref="#booking"
         secondaryButtonText="Angebot anfragen"

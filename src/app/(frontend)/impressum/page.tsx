@@ -77,11 +77,6 @@ export default async function ImpressumPage() {
       </p>
     )}
 
-    {/* Title */}
-    <h2 className="text-[28px] md:text-[32px] font-semibold text-[#4C5157] mb-[40px]">
-      {doc?.title || 'Impressum'}
-    </h2>
-
     {/* Content */}
     <div className="text-[#4C5157] text-[16px] md:text-[18px] leading-[160%] flex flex-col gap-[32px]">
       {doc?.content ? (
@@ -92,7 +87,13 @@ export default async function ImpressumPage() {
           className="prose max-w-none text-[#4C5157] text-[16px] md:text-[18px] leading-[160%] prose-headings:font-semibold prose-headings:text-[#4C5157] prose-h3:text-[16px] md:prose-h3:text-[18px] prose-h3:mt-[32px] prose-h3:mb-[12px] prose-h2:mt-[32px] prose-h2:mb-[12px] prose-p:text-[#4C5157] prose-p:mt-0 prose-p:mb-[12px] first:prose-headings:mt-0"
         />
       ) : (
-        <p>Inhalte werden geladen oder sind noch nicht verfügbar.</p>
+        <>
+          {/* Title only shown as fallback when no CMS content */}
+          <h2 className="text-[28px] md:text-[32px] font-semibold text-[#4C5157] mb-[40px]">
+            {doc?.title || 'Impressum'}
+          </h2>
+          <p>Inhalte werden geladen oder sind noch nicht verfügbar.</p>
+        </>
       )}
     </div>
   </div>

@@ -102,10 +102,6 @@ export default async function AGBPage() {
                 </p>
               )}
 
-              <h2 className="text-[30px] font-semibold text-[#333F51]">
-                {doc?.title || "Unsere AGB"}
-              </h2>
-
               {/* BODY */}
               <div className="flex flex-col gap-[32px] text-[#4C5157] text-[16px] leading-[28px]">
                 {doc?.content ? (
@@ -116,7 +112,13 @@ export default async function AGBPage() {
                     className="prose max-w-none text-[#4C5157] text-[16px] leading-[28px] prose-headings:font-semibold prose-headings:text-[#333F51] prose-h3:text-[16px] prose-h3:mt-[32px] prose-h3:mb-[12px] prose-h2:mt-[32px] prose-h2:mb-[12px] prose-p:text-[#4C5157] prose-p:mt-0 prose-p:mb-[12px] first:prose-headings:mt-0"
                   />
                 ) : (
-                  <p>Inhalte werden geladen oder sind noch nicht verfügbar.</p>
+                  <>
+                    {/* Title only shown as fallback when no CMS content */}
+                    <h2 className="text-[30px] font-semibold text-[#333F51]">
+                      {doc?.title || "Unsere AGB"}
+                    </h2>
+                    <p>Inhalte werden geladen oder sind noch nicht verfügbar.</p>
+                  </>
                 )}
               </div>
             </div>

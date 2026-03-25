@@ -6,11 +6,11 @@ import Image from 'next/image'
 export const Memberships: React.FC = () => {
   const logos = [
     '/blog/logos/sog-logo.png',
-    '/blog/logos/logo-1.png',
+    
     '/blog/logos/logo3.png',
     '/blog/logos/logo4.png',
-    '/blog/logos/procure.ch Logo 1.png',
     '/blog/logos/logo5.png',
+    '/blog/logos/procure.ch Logo 1.png',
     '/blog/logos/logo7.png',
   ]
 
@@ -33,7 +33,7 @@ export const Memberships: React.FC = () => {
                   alt={`Partner Logo ${index + 1}`}
                   width={140}
                   height={45}
-                  className="object-contain h-auto max-h-[28px] sm:max-h-[34px] lg:max-h-[45px] max-w-[90px] sm:max-w-[110px] lg:max-w-[140px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease"
+                  className="object-contain h-auto max-h-[28px] sm:max-h-[34px] lg:max-h-[45px] max-w-[90px] sm:max-w-[110px] lg:max-w-[140px]  opacity-100 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease"
                 />
               </div>
             ))}

@@ -16,26 +16,21 @@ const caseStudies = [
     logoWidth: 110,
     title: 'Wie ein Interim-COO-Setup Entscheidungstempo und Ownership erhöhte',
     description: 'Entdecken Sie, wie ein klares Mandat in der Linie, saubere Entscheidungsfenster und ein einfacher Operating Rhythmus Meetinglast reduziert und Verantwortung dorthin gebracht haben, wo Umsetzung passiert.',
-    link: '/case-studies',
+    link: 'https://drive.proton.me/urls/G7Z31GJVSW#RTm4mnf47fk9',
   },
   {
     logo: '/assets/services/logo-2.png',
     logoWidth: 155,
     description: 'Entdecken Sie, wie klare Trade-offs, ein schlanker Steuerungsrhythmus und transparente Verantwortungen aus vielen Initiativen ein umsetzbares Portfolio gemacht haben – mit sichtbaren Effekten auf Ergebnis und Führungskapazität.',
-    link: '/case-studies',
+    link: 'https://drive.proton.me/urls/VQJDC6ENNG#tg7LfKVYcLd4',
   },
   {
-    logo: '/assets/services/logo-1.png',
-    logoWidth: 110,
-    title: 'Neuausrichtung der Supply Chain nach akutem Wachstum',
-    description: 'Wie wir gemeinsam mit dem Leadership-Team Prozesse verschlankt und die Lieferfähigkeit signifikant gesteigert haben, ohne die Kostenstruktur aus den Augen zu verlieren.',
-    link: '/case-studies',
-  },
-  {
-    logo: '/assets/services/logo-2.png',
+    logo: '/assets/services/logo-3.jpeg',
     logoWidth: 155,
-    description: 'Wie eine Restrukturierung in einem schwierigen Marktumfeld zur Stabilisierung der Margen und neuem Vertrauen bei den Stakeholdern geführt hat.',
-    link: '/case-studies',
+    title: 'Wie Struktur und Verbindlichkeit ärztliche Leadership-Projekte wirksam machten',
+    description: 'Entdecken Sie, wie strukturierte Agenden, Follow-up-Zyklen und eine neue Ergebnisverantwortung fachlich exzellenten Ärztinnen und Ärzten halfen, ihre Kompetenz in wirkungsvolle Projektarbeit zu übersetzen.',
+    link: 'https://drive.proton.me/urls/EP4BTVH4EC#UvGKlq9Bympg',
+    buttonText: 'Case Study lesen'
   }
 ];
 
@@ -146,9 +141,13 @@ export const CaseStudySection: React.FC = () => {
                   <div className="mt-[24px] lg:mt-[32px]">
                     <Link
                       href={caseStudy.link}
-                      className="inline-flex flex-row items-center justify-center px-[22px] py-[14px] border-[1.5px] border-[#545D52] rounded-[16px] text-[#1D2B19] hover:bg-[#1D2B19] hover:text-white transition-colors duration-200 w-[176px]"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex flex-row items-center justify-center px-[22px] py-[14px] border-[1.5px] border-[#545D52] rounded-[16px] text-[#1D2B19] hover:bg-[#1D2B19] hover:text-white transition-colors duration-200 w-fit min-w-[176px]"
                     >
-                      <span className="font-['Inter',sans-serif] font-medium text-[16px] leading-[170%]">Casestudy lesen</span>
+                      <span className="font-['Inter',sans-serif] font-medium text-[16px] leading-[170%] whitespace-nowrap">
+                        {caseStudy.buttonText || 'Casestudy lesen'}
+                      </span>
                     </Link>
                   </div>
 

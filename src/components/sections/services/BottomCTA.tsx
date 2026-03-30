@@ -55,14 +55,14 @@ export const BottomCTA: React.FC<BottomCTAProps> = ({
               {description}
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-[14px]">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-[14px]">
             {primaryButtonHref ? (
               <Link
                 href={primaryButtonHref}
-                className="inline-flex flex-row items-center justify-between sm:justify-start pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
+                className="flex w-full sm:w-fit flex-row items-center justify-between sm:justify-start pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
                 style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
               >
-                <span>{primaryButtonText}</span>
+                <span className="truncate">{primaryButtonText}</span>
                 <span className="w-[34px] h-[34px] bg-white rounded-[10px] flex items-center justify-center shrink-0">
                   <ArrowUpRight className="w-[14px] h-[14px] text-[#120485]" strokeWidth={2} />
                 </span>
@@ -70,10 +70,10 @@ export const BottomCTA: React.FC<BottomCTAProps> = ({
             ) : (
               <button
                 onClick={openModal}
-                className="inline-flex flex-row items-center justify-between sm:justify-start pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
+                className="flex w-full sm:w-fit flex-row items-center justify-between sm:justify-start pl-[16px] pr-[8px] py-[8px] gap-[12px] rounded-[16px] font-['Inter',sans-serif] font-semibold text-[17px] leading-[170%] text-white shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
                 style={{ background: '#120485', boxShadow: '0px 19px 19px rgba(0,0,0,0.09), 0px 5px 10px rgba(0,0,0,0.1)' }}
               >
-                <span>{primaryButtonText}</span>
+                <span className="truncate">{primaryButtonText}</span>
                 <span className="w-[34px] h-[34px] bg-white rounded-[10px] flex items-center justify-center shrink-0">
                   <ArrowUpRight className="w-[14px] h-[14px] text-[#120485]" strokeWidth={2} />
                 </span>
@@ -81,9 +81,9 @@ export const BottomCTA: React.FC<BottomCTAProps> = ({
             )}
             <Link
               href={secondaryButtonHref}
-              className="inline-flex items-center justify-center px-[20px] py-[12px] gap-[10px] rounded-[16px] border border-white font-['Inter',sans-serif] font-semibold text-[15px] sm:text-[17px] leading-[170%] text-white shrink-0 hover:bg-white hover:text-[#897ADB] transition-all"
+              className="flex w-full sm:w-fit items-center justify-center px-[20px] py-[12px] gap-[10px] rounded-[16px] border border-white font-['Inter',sans-serif] font-semibold text-[15px] sm:text-[17px] leading-[170%] text-white shrink-0 hover:bg-white hover:text-[#897ADB] transition-all"
             >
-              <span>{secondaryButtonText}</span>
+              <span className="truncate">{secondaryButtonText}</span>
               <ArrowRight className="w-[18px] h-[18px] shrink-0" strokeWidth={2} />
             </Link>
           </div>

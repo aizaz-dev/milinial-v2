@@ -26,11 +26,24 @@ export const CategoryArchive: React.FC<Props> = ({ initialPosts, categories }) =
 
   useEffect(() => {
     let isMounted = true
-    // Skip loading state on initial mount to avoid flicker if already passed via props
-    if (!isFirstMount.current) {
-        setLoading(true)
+    
+    // Check URL params on first mount before doing the initial fetch logic
+    if (isFirstMount.current) {
+      isFirstMount.current = false
+      if (typeof window !== 'undefined') {
+        const params = new URLSearchParams(window.location.search);
+        const categoryParam = params.get('category');
+        if (categoryParam && categories) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const match = categories.find((c: any) => c.title?.toLowerCase() === categoryParam.toLowerCase());
+          if (match) {
+            setActiveCategory(match.id);
+            return; // Re-trigger useEffect with the new activeCategory
+          }
+        }
+      }
     } else {
-        isFirstMount.current = false
+      setLoading(true)
     }
 
     // Build query

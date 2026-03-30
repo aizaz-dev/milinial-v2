@@ -42,7 +42,7 @@ function BlogCard({ blog }: BlogCardProps) {
   return (
     <Link
       href={`/blogs/${slug}`}
-      className="flex flex-col items-start pb-[24px] gap-[24px] bg-[#FEFEFE] w-full lg:w-[424px] shrink-0 hover:shadow-md transition-shadow duration-300 group"
+      className="flex flex-col items-start pb-[24px] gap-[24px] bg-[#FEFEFE] w-full rounded-tr-[16px] lg:w-[424px] shrink-0 hover:shadow-md transition-shadow duration-300 group"
     >
       {/* Image */}
       <div className="relative w-full h-[276px] shrink-0 overflow-hidden rounded-tr-[16px] rounded-bl-[16px]">

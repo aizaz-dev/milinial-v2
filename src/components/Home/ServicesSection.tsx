@@ -10,7 +10,7 @@ type CardProps = {
 
 function ServiceCard({ image, title, description }: CardProps) {
   return (
-    <Link href="/services" className="block relative w-full lg:w-[424px] h-[562px] rounded-[16px] overflow-hidden group cursor-pointer shrink-0">
+    <Link href="/services" className="block relative w-full lg:w-[424px] h-[562px] rounded-tr-[16px] rounded-bl-[16px] overflow-hidden group cursor-pointer shrink-0">
       
       <Image
         src={image}

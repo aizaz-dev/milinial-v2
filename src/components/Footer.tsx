@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Top Section */}
                 <div className="flex flex-col lg:flex-row justify-between gap-12 mb-20">
-                    
+
                     {/* LEFT - Brand and Description */}
                     <div className="max-w-full lg:max-w-[380px]">
                         <Link href="/" className="inline-block mb-6">
@@ -28,7 +28,7 @@ const Footer = () => {
 
                     {/* RIGHT - Links Columns */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 lg:flex lg:flex-row lg:gap-20">
-                        
+
                         {/* Navigation */}
                         <div>
                             <h3 className="font-inter font-medium text-[16px] leading-[1.8] tracking-[-0.0125em] text-white mb-6">Navigation</h3>
@@ -45,8 +45,8 @@ const Footer = () => {
                         <div>
                             <h3 className="font-inter font-medium text-[16px] leading-[1.8] tracking-[-0.0125em] text-white mb-6">Ressourcen</h3>
                             <ul className="flex flex-col gap-4">
-                                <li><Link href="/publikationen" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">Publikationen</Link></li>
-                                <li><Link href="/patients-first-book-site" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">Patients First Buch</Link></li>
+                                <li><Link href="/blogs?category=Publikationen" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">Publikationen</Link></li>
+                                {/* <li><Link href="/patients-first-book-site" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">Patients First Buch</Link></li> */}
                                 <li><Link href="/clients-first" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">Clients First Buch</Link></li>
                             </ul>
                         </div>
@@ -58,6 +58,7 @@ const Footer = () => {
                                 <li><Link href="/impressum" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">Impressum</Link></li>
                                 <li><Link href="/datenschutz" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">Datenschutz</Link></li>
                                 <li><Link href="/agb" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">AGB</Link></li>
+                                <li><Link href="/ai-transparency" className="font-geist font-normal text-[16px] leading-[1.7] tracking-[-0.025em] text-[#A1A1AA] hover:text-white transition-colors">AI Transparency</Link></li>
                             </ul>
                         </div>
 

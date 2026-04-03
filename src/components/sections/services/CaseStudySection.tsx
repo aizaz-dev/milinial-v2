@@ -81,8 +81,9 @@ export const CaseStudySection: React.FC = () => {
 
           <Swiper
             modules={[Autoplay]}
-            spaceBetween={20}
-            slidesPerView="auto"
+            spaceBetween={16}
+            slidesPerView={1.1}
+            autoHeight={false}
             loop={true}
             autoplay={{
               delay: 6000,
@@ -95,16 +96,21 @@ export const CaseStudySection: React.FC = () => {
               setActiveIndex(swiper.realIndex);
             }}
             breakpoints={{
+              640: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+              },
               1024: {
+                slidesPerView: 2,
                 spaceBetween: 26,
               },
             }}
             className="w-full pb-6 lg:pb-0"
           >
             {caseStudies.map((caseStudy, index) => (
-              <SwiperSlide key={index} style={{ width: 'auto', height: 'auto', display: 'flex' }}>
+              <SwiperSlide key={index} className="!h-auto flex items-start">
                 <div
-                  className="flex flex-col h-fit w-[320px] sm:w-[400px] lg:w-[634px] bg-white border border-[rgba(12,14,23,0.1)] rounded-[16px] p-[24px] sm:p-[32px] lg:p-[41px_38px] shadow-sm ml-0 mr-auto"
+                  className="flex flex-col h-fit w-full bg-white border border-[rgba(12,14,23,0.1)] rounded-[16px] p-[24px] sm:p-[32px] lg:p-[41px_38px] shadow-sm"
                 >
                   <div className="flex flex-col items-start gap-[24px] lg:gap-[36px] w-full">
                     {/* Logo image */}
@@ -128,7 +134,7 @@ export const CaseStudySection: React.FC = () => {
                     )}
                   </div>
 
-                  <div className="flex flex-col items-start gap-[16px] w-full mt-[20px] lg:mt-[20px]">
+                  <div className="flex flex-col items-start gap-[16px] w-full mt-[24px]">
                     {/* Divider Line */}
                     <div className="w-full h-px bg-[#1D2B19] opacity-20"></div>
                     {/* Paragraph */}

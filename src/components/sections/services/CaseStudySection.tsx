@@ -110,9 +110,9 @@ export const CaseStudySection: React.FC = () => {
             {caseStudies.map((caseStudy, index) => (
               <SwiperSlide key={index} className="!h-auto flex items-start">
                 <div
-                  className="flex flex-col h-fit w-full bg-white border border-[rgba(12,14,23,0.1)] rounded-[16px] p-[24px] sm:p-[32px] lg:p-[41px_38px] shadow-sm"
+                  className="flex flex-col h-fit w-full bg-white border border-[rgba(12,14,23,0.1)] rounded-[16px] p-[20px] sm:p-[28px] lg:p-[32px_28px] shadow-sm"
                 >
-                  <div className="flex flex-col items-start gap-[24px] lg:gap-[36px] w-full">
+                  <div className="flex flex-col items-start gap-[20px] lg:gap-[28px] w-full">
                     {/* Logo image */}
                     <div
                       className="h-[42px] relative flex items-center shrink-0"
@@ -134,7 +134,7 @@ export const CaseStudySection: React.FC = () => {
                     )}
                   </div>
 
-                  <div className="flex flex-col items-start gap-[16px] w-full mt-[24px]">
+                  <div className="flex flex-col items-start gap-[16px] w-full mt-[20px]">
                     {/* Divider Line */}
                     <div className="w-full h-px bg-[#1D2B19] opacity-20"></div>
                     {/* Paragraph */}
@@ -144,7 +144,7 @@ export const CaseStudySection: React.FC = () => {
                   </div>
 
                   {/* Button - wrapped directly underneath */}
-                  <div className="mt-[24px] lg:mt-[32px]">
+                  <div className="mt-[20px] lg:mt-[24px]">
                     <Link
                       href={caseStudy.link}
                       target="_blank"

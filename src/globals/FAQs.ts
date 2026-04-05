@@ -55,3 +55,14 @@ export const ServicesFAQ: GlobalConfig = {
   },
   fields: faqFields,
 }
+
+export const HowWeWorkFAQ: GlobalConfig = {
+  slug: 'how-we-work-faq',
+  access: {
+    read: () => true,
+  },
+  admin: {
+    group: 'How We Work Page',
+  },
+  fields: faqFields,
+}

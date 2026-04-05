@@ -1,4 +1,6 @@
 import React, { forwardRef } from 'react'
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 
 import { ProblemSolutionSection } from '@/components/sections/ProblemSolutionSection'
 import { FeatureGrid } from '@/components/sections/FeatureGrid'
@@ -43,9 +45,15 @@ const Icon4 = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>((props, r
 Icon4.displayName = 'Icon4'
 
 export const dynamic = 'force-static'
-export const revalidate = 600
+export const revalidate = 60 // Revalidate every 60 seconds to pick up CMS changes
 
-export default function Page() {
+export default async function Page() {
+  const payload = await getPayload({ config: configPromise })
+
+  const howWeWorkFAQ = await payload.findGlobal({
+    slug: 'how-we-work-faq',
+  })
+
   return (
     <div className="bg-background text-foreground">
       <ChangeSection />
@@ -90,38 +98,7 @@ export default function Page() {
 
       <TestimonialSlider />
 
-      <PatientsFirstBookFAQ
-        eyebrow="FAQ zu LbC"
-        title="Häufig gefragt. Direkt beantwortet."
-        description="Transparente Antworten auf die Fragen, die Entscheider vor dem Start wirklich interessieren: Risiko, Ressourcen, Resultate."
-        faqs={[
-          {
-            question: 'Was ist Leadership by Congruence® (LbC) in einem Satz?',
-            answer:
-              'Ein Führungsansatz, der Strategie, Struktur und Verhalten in Einklang bringt, um Reibungsverluste zu minimieren und Umsetzungskraft zu maximieren.',
-          },
-          {
-            question: 'Wie schnell sieht man Wirkung?',
-            answer:
-              'Oft schon nach wenigen Wochen, da wir an den echten Engpässen (Entscheidungen, Rollenklarheit) ansetzen und nicht nur Konzepte schreiben.',
-          },
-          {
-            question: 'Wie stellt ihr Vertraulichkeit sicher?',
-            answer:
-              'Wir arbeiten mit strengen NDAs und diskreten Kommunikationswegen. In sensiblen Phasen agieren wir im Hintergrund oder mit neutraler Mandatierung.',
-          },
-          {
-            question: 'Was unterscheidet LbC von OKR/Agile/Change-Programmen?',
-            answer:
-              'LbC ist kein Framework, das "eingeführt" wird, sondern eine Haltung und Arbeitsweise, die bestehende Strukturen nutzt und optimiert, statt alles umzuwerfen.',
-          },
-          {
-            question: 'Für welche Unternehmen ist LbC gemacht?',
-            answer:
-              'Für Organisationen im Wandel, die merken, dass klassische Hierarchie zu langsam, aber reine Selbstorganisation zu chaotisch ist.',
-          },
-        ]}
-      />
+      <PatientsFirstBookFAQ data={howWeWorkFAQ} />
 
       <BottomCTA
         title="Wo dürfen wir Verantwortung bei Ihnen übernehmen?"

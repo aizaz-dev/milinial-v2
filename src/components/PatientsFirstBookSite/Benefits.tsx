@@ -1,45 +1,46 @@
 import React from 'react'
 import { Megaphone, Zap, ShieldCheck, Network, Search, HandCoins } from 'lucide-react'
+import { BoltIcon, MegaphoneIcon, PuzzleIcon, HandshakeIcon } from './BookIcons'
 
 import type { LucideProps } from 'lucide-react'
 
-const iconMap: Record<string, React.FC<LucideProps>> = {
-  Megaphone,
-  Zap,
-  ShieldCheck,
-  Network,
-  Search,
-  HandCoins,
+const iconMap: Record<string, React.FC<any>> = {
+  Megaphone: MegaphoneIcon,
+  Zap: BoltIcon,
+  ShieldCheck: BoltIcon,
+  Network: MegaphoneIcon,
+  Search: PuzzleIcon,
+  HandCoins: HandshakeIcon,
 }
 
 const defaultBenefits = [
   {
-    icon: Megaphone,
+    icon: MegaphoneIcon,
     title: 'Entscheidungen klar kommunizieren',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   },
   {
-    icon: Zap,
+    icon: BoltIcon,
     title: 'Leistung steigern, ohne Kultur zu zerstören',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   },
   {
-    icon: ShieldCheck,
+    icon: BoltIcon,
     title: 'Team-Vertrauen aufbauen',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   },
   {
-    icon: Network,
+    icon: MegaphoneIcon,
     title: 'Führung im klinischen Alltag strukturieren',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   },
   {
-    icon: Search,
+    icon: PuzzleIcon,
     title: 'Konflikte früh erkennen und wirksam lösen',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   },
   {
-    icon: HandCoins,
+    icon: HandshakeIcon,
     title: 'Verantwortung sauber delegieren',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   },

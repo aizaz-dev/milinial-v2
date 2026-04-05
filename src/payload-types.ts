@@ -119,6 +119,7 @@ export interface Config {
     'book-benefits': BookBenefit;
     'book-faq': BookFaq;
     'services-faq': ServicesFaq;
+    'how-we-work-faq': HowWeWorkFaq;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
@@ -126,6 +127,7 @@ export interface Config {
     'book-benefits': BookBenefitsSelect<false> | BookBenefitsSelect<true>;
     'book-faq': BookFaqSelect<false> | BookFaqSelect<true>;
     'services-faq': ServicesFaqSelect<false> | ServicesFaqSelect<true>;
+    'how-we-work-faq': HowWeWorkFaqSelect<false> | HowWeWorkFaqSelect<true>;
   };
   locale: null;
   widgets: {
@@ -1829,6 +1831,25 @@ export interface ServicesFaq {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "how-we-work-faq".
+ */
+export interface HowWeWorkFaq {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description?: string | null;
+  faqs?:
+    | {
+        question: string;
+        answer: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -1916,6 +1937,25 @@ export interface BookFaqSelect<T extends boolean = true> {
  * via the `definition` "services-faq_select".
  */
 export interface ServicesFaqSelect<T extends boolean = true> {
+  eyebrow?: T;
+  title?: T;
+  description?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "how-we-work-faq_select".
+ */
+export interface HowWeWorkFaqSelect<T extends boolean = true> {
   eyebrow?: T;
   title?: T;
   description?: T;

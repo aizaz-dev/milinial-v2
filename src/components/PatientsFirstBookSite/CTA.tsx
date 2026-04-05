@@ -4,7 +4,7 @@ import { ShoppingCart } from 'lucide-react'
 
 const CTA = () => {
   return (
-    <section className="w-full bg-[#FEFEFE] py-[80px] lg:py-[93px] flex justify-center overflow-hidden">
+    <section id="buy-book" className="w-full bg-[#FEFEFE] py-[80px] lg:py-[93px] flex justify-center overflow-hidden">
       <div className="w-full max-w-[1360px] mx-auto px-4 xl:px-0 flex flex-col items-stretch lg:flex-row  justify-center gap-[30px]">
 
         {/* Left Block: Book Details */}
@@ -42,7 +42,7 @@ const CTA = () => {
 
             {/* CTA Button */}
             <a 
-              href="https://www.bod.de/buchshop/patients-first-philipp-r-juchli-9783751956932" 
+              href="https://buchshop.bod.ch/patients-first-philipp-r-juchli-9783751956932" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex flex-row items-center justify-between w-full max-w-[331px] h-[55px] bg-[#FFFFFF] rounded-[16px] px-[16px] pr-[8px] hover:bg-[#f6f6f6] transition-colors shadow-[0px_75px_30px_rgba(0,0,0,0.01),0px_42px_25px_rgba(0,0,0,0.05),0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)] group shrink-0 cursor-pointer"

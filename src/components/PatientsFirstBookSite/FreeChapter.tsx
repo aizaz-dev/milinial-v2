@@ -34,6 +34,7 @@ const PatientsFirstBookFreeChapter = () => {
 
   return (
     <section
+      id="free-chapter"
       className="relative w-full min-h-[918px] overflow-hidden flex flex-col items-center justify-start  bg-linear-to-b from-[#433E72] to-[#4C39A8]"
     >
 
@@ -147,11 +148,14 @@ const PatientsFirstBookFreeChapter = () => {
               </div>
 
               {/* Buch Kaufen Button */}
-              <button className="w-full md:w-[149px] h-[55px] rounded-[16px] border border-white flex items-center justify-center hover:bg-white/10 transition-colors shadow-[0px_75px_30px_rgba(0,0,0,0.01),0px_42px_25px_rgba(0,0,0,0.05),0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)] shrink-0">
+              <a 
+                href="#buy-book"
+                className="w-full md:w-[149px] h-[55px] rounded-[16px] border border-white flex items-center justify-center hover:bg-white/10 transition-colors shadow-[0px_75px_30px_rgba(0,0,0,0.01),0px_42px_25px_rgba(0,0,0,0.05),0px_19px_19px_rgba(0,0,0,0.09),0px_5px_10px_rgba(0,0,0,0.1)] shrink-0"
+              >
                 <span className="font-['Inter',sans-serif] font-semibold text-[16px] text-white leading-[170%] tracking-[-0.2px]">
                   Buch Kaufen
                 </span>
-              </button>
+              </a>
 
             </div>
           </div>

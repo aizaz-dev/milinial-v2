@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Linkedin, X } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import { XingIcon } from "../../PatientsFirstBookSite/BookIcons";
 
 export default function ProfileSection() {
   return (
@@ -70,13 +71,23 @@ export default function ProfileSection() {
 
             {/* Icons */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-black flex items-center justify-center">
+              <a 
+                href="https://www.linkedin.com/in/philipp-juchli-465b983b8/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-black flex items-center justify-center hover:bg-black/80 transition-colors"
+              >
                 <Linkedin size={18} color="white" />
-              </div>
+              </a>
 
-              <div className="w-10 h-10 bg-white flex items-center justify-center border">
-                <X size={18} />
-              </div>
+              <a 
+                href="https://www.xing.com/profile/Philipp_Juchli098724/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white flex items-center justify-center border hover:bg-gray-50 transition-colors"
+              >
+                <XingIcon className="w-5 h-5" />
+              </a>
             </div>
 
           </div>

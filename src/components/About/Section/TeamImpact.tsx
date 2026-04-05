@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { XingIcon } from "../../PatientsFirstBookSite/BookIcons";
 
 export default function TeamImpactSection() {
   return (
@@ -65,15 +66,23 @@ export default function TeamImpactSection() {
                       <span className="font-inter font-normal text-[16px] leading-[170%] text-[#4B4B56]">Co-Founder und Geschäftsführer Millenial-C</span>
                    </div>
                    <div className="flex flex-row pr-[5px] gap-[8px] h-[82px] items-center">
-                     <a href="#" className="flex justify-center items-center w-[48px] h-[48px] bg-[#000000] hover:opacity-80 transition-opacity">
+                     <a 
+                        href="https://www.linkedin.com/in/philipp-juchli-465b983b8/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center w-[48px] h-[48px] bg-[#000000] hover:opacity-80 transition-opacity"
+                     >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M4.98 3.5C4.98 4.881 3.87 6 2.5 6C1.13 6 0 4.881 0 3.5C0 2.119 1.13 1 2.5 1C3.87 1 4.98 2.119 4.98 3.5ZM0.28 8H4.72V23H0.28V8ZM7.44 8H11.75V10.15H11.81C12.41 9.02 13.88 8 16.03 8C20.55 8 21.41 10.97 21.41 14.8V23H16.97V15.7C16.97 13.96 16.63 12.18 14.7 12.18C12.42 12.18 11.88 13.95 11.88 15.53V23H7.44V8Z" fill="white"/>
                         </svg>
                      </a>
-                     <a href="#" className="flex justify-center items-center w-[48px] h-[48px] bg-[#FFFFFF] hover:opacity-80 transition-opacity">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M18.901 0H22.581L14.541 9.18684L24 21.684H16.593L10.794 14.1032L4.156 21.684H0.474L9.083 11.8421L0 0H7.593L12.839 6.94105L18.901 0ZM17.61 19.6053H19.65L6.486 1.96842H4.316L17.61 19.6053Z" fill="#001305"/>
-                        </svg>
+                     <a 
+                        href="https://www.xing.com/profile/Philipp_Juchli098724/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center w-[48px] h-[48px] bg-[#FFFFFF] border border-gray-200 hover:opacity-80 transition-opacity"
+                     >
+                        <XingIcon className="w-6 h-6 text-[#001305]" />
                      </a>
                    </div>
                 </div>
@@ -95,14 +104,14 @@ export default function TeamImpactSection() {
                       <span className="font-inter font-normal text-[16px] leading-[170%] text-[#4B4B56]">Co-Founder</span>
                    </div>
                    <div className="flex flex-row pr-[5px] gap-[8px] h-[82px] items-center">
-                     <a href="#" className="flex justify-center items-center w-[48px] h-[48px] bg-[#000000] hover:opacity-80 transition-opacity">
+                     <a 
+                        href="https://www.linkedin.com/in/ninaisabelkoch/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center w-[48px] h-[48px] bg-[#000000] hover:opacity-80 transition-opacity"
+                     >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M4.98 3.5C4.98 4.881 3.87 6 2.5 6C1.13 6 0 4.881 0 3.5C0 2.119 1.13 1 2.5 1C3.87 1 4.98 2.119 4.98 3.5ZM0.28 8H4.72V23H0.28V8ZM7.44 8H11.75V10.15H11.81C12.41 9.02 13.88 8 16.03 8C20.55 8 21.41 10.97 21.41 14.8V23H16.97V15.7C16.97 13.96 16.63 12.18 14.7 12.18C12.42 12.18 11.88 13.95 11.88 15.53V23H7.44V8Z" fill="white"/>
-                        </svg>
-                     </a>
-                     <a href="#" className="flex justify-center items-center w-[48px] h-[48px] bg-[#FFFFFF] hover:opacity-80 transition-opacity">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M18.901 0H22.581L14.541 9.18684L24 21.684H16.593L10.794 14.1032L4.156 21.684H0.474L9.083 11.8421L0 0H7.593L12.839 6.94105L18.901 0ZM17.61 19.6053H19.65L6.486 1.96842H4.316L17.61 19.6053Z" fill="#001305"/>
                         </svg>
                      </a>
                    </div>

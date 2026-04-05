@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
+import { XingIcon } from './BookIcons'
 
 const PatientsFirstBookAuthor = () => {
   return (
@@ -30,16 +31,24 @@ const PatientsFirstBookAuthor = () => {
             {/* Social Handles */}
             <div className="flex flex-row items-start gap-[8px]">
               {/* LinkedIn */}
-              <a href="#" className="flex flex-col items-center justify-center w-[48px] h-[48px] bg-[#EDEBF6] rounded-[8px] hover:bg-[#dcd8f0] transition-colors shrink-0">
+              <a 
+                href="https://www.linkedin.com/in/philipp-juchli-465b983b8/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col items-center justify-center w-[48px] h-[48px] bg-[#EDEBF6] rounded-[8px] hover:bg-[#dcd8f0] transition-colors shrink-0"
+              >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19ZM18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.07 9.94 13.4 10.58 13 11.12V10.15H10.5V18.5H13V13.57C13 12.3 13.92 11.5 14.88 11.5C15.84 11.5 16.5 12.28 16.5 13.57V18.5H18.5ZM6.88 8.56A1.46 1.46 0 0 0 8.34 7.1A1.46 1.46 0 0 0 6.88 5.64A1.46 1.46 0 0 0 5.42 7.1A1.46 1.46 0 0 0 6.88 8.56ZM5.5 18.5H8.25V10.15H5.5V18.5Z" fill="#190D00"/>
                 </svg>
               </a>
-              {/* X (formerly Twitter) */}
-              <a href="#" className="flex flex-col items-center justify-center w-[48px] h-[48px] bg-[#EDEBF6] rounded-[8px] hover:bg-[#dcd8f0] transition-colors shrink-0">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18.901 3H21.571L15.74 9.664L22.612 18.73H17.229L13.012 13.22L8.19 18.73H5.517L11.758 11.6L5.174 3H10.702L14.516 8.041L18.901 3ZM17.968 17.13H19.447L9.72 4.516H8.134L17.968 17.13Z" fill="#190D00"/>
-                </svg>
+              {/* Xing */}
+              <a 
+                href="https://www.xing.com/profile/Philipp_Juchli098724/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col items-center justify-center w-[48px] h-[48px] bg-[#EDEBF6] rounded-[8px] hover:bg-[#dcd8f0] transition-colors shrink-0"
+              >
+                <XingIcon className="w-6 h-6 text-[#190D00]" />
               </a>
             </div>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Linkedin, X } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export default function ProfileSectionTwo() {
   return (
@@ -36,13 +36,14 @@ export default function ProfileSectionTwo() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-black flex items-center justify-center">
+              <a 
+                href="https://www.linkedin.com/in/ninaisabelkoch/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-black flex items-center justify-center hover:bg-black/80 transition-colors"
+              >
                 <Linkedin size={18} color="white" />
-              </div>
-
-              <div className="w-10 h-10 bg-white border flex items-center justify-center">
-                <X size={18} />
-              </div>
+              </a>
             </div>
 
           </div>

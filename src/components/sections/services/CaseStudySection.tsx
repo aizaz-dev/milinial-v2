@@ -20,7 +20,7 @@ const caseStudies = [
     buttonText: 'Case Study lesen'
   },
   {
-    logo: '/assets/services/logo-2.png',
+    logo: '/assets/services/ksw.png',
     logoWidth: 155,
     title: 'Wie gemeinsame Klarheit eine Klinikleitung aus der Blockade löste',
     description: 'Erfahren Sie, wie gemeinsam erarbeitete Vision, Führungsprinzipien und klare Kommunikationswege aus gegenseitigen Vorwürfen ein konstruktives Miteinander formten – mit spürbarem kulturellem Wandel im Klinikalltag.',

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Megaphone, Zap, ShieldCheck, Network, Search, HandCoins } from 'lucide-react'
-import { BoltIcon, MegaphoneIcon, PuzzleIcon, HandshakeIcon, ShieldCheckIcon, SearchIcon } from './BookIcons'
+import { BoltIcon, MegaphoneIcon, PuzzleIcon, HandshakeIcon, ShieldCheckIcon, SearchIcon, HierarchyIcon } from './BookIcons'
 
 import type { LucideProps } from 'lucide-react'
 
@@ -8,7 +8,7 @@ const iconMap: Record<string, React.FC<any>> = {
   Megaphone: MegaphoneIcon,
   Zap: BoltIcon,
   ShieldCheck: ShieldCheckIcon,
-  Network: MegaphoneIcon,
+  Network: HierarchyIcon,
   Search: SearchIcon,
   HandCoins: HandshakeIcon,
 }

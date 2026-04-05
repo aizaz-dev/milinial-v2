@@ -11,9 +11,8 @@ export default function Hero() {
 
   useEffect(() => {
     if (videoRef.current) {
-      // Set playback speed to 0.75x (75% of normal speed)
-      // Adjust this value as needed: 0.5 is half speed, 1.0 is normal speed
-      videoRef.current.playbackRate = 0.75;
+      // Set playback speed to 0.5x (50% of normal speed)
+      videoRef.current.playbackRate = 0.5;
     }
   }, []);
 

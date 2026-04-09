@@ -66,3 +66,13 @@ export const HowWeWorkFAQ: GlobalConfig = {
   },
   fields: faqFields,
 }
+export const ClientsFirstBookFAQ: GlobalConfig = {
+  slug: 'clients-first-book-faq',
+  access: {
+    read: () => true,
+  },
+  admin: {
+    group: 'Clients First Book',
+  },
+  fields: faqFields,
+}

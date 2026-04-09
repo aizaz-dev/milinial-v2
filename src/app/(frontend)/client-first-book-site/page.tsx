@@ -11,9 +11,8 @@ import Benefits from '@/components/ClientFirstBookSite/Benefits'
 import FAQ from '@/components/ClientFirstBookSite/FAQ'
 import CTA from '@/components/ClientFirstBookSite/CTA'
 import { Memberships } from '@/components/Memberships'
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 export const revalidate = 60 // Revalidate every 60 seconds to pick up CMS changes
-
 export default async function PatientsFirstBookPage() {
   const payload = await getPayload({ config: configPromise })
   

@@ -13,7 +13,7 @@ import { Users } from './collections/Users'
 import { LegalPages } from './collections/LegalPages'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
-import { BookBenefits } from './globals/BookBenefits'
+import { BookBenefits, ClientsFirstBookBenefits  } from './globals/BookBenefits'
 import { BookFAQ, ServicesFAQ, HowWeWorkFAQ, ClientsFirstBookFAQ} from './globals/FAQs'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
@@ -66,7 +66,7 @@ export default buildConfig({
   }),
   collections: [Pages, Blogs, Media, Categories, Users, Authors, LegalPages],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer, BookBenefits, BookFAQ, ServicesFAQ, HowWeWorkFAQ, ClientsFirstBookFAQ],
+  globals: [Header, Footer, BookBenefits, ClientsFirstBookBenefits ,BookFAQ, ServicesFAQ, HowWeWorkFAQ, ClientsFirstBookFAQ],
   plugins,
   secret: process.env.PAYLOAD_SECRET || 'fallback-secret-for-build',
   sharp,

@@ -22,7 +22,7 @@ export default async function PatientsFirstBookPage() {
   })
 
  const bookFAQ = await payload.findGlobal({
-  slug: 'clients-first-book-faq',
+    slug: 'clients-first-book-faq',
 })
 
 

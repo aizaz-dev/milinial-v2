@@ -16,10 +16,9 @@ export const revalidate = 60 // Revalidate every 60 seconds to pick up CMS chang
 export default async function PatientsFirstBookPage() {
   const payload = await getPayload({ config: configPromise })
   
- const bookBenefits = await payload.findGlobal({
+const bookBenefits = await payload.findGlobal({
   slug: 'clients-first-book-benefits',
 })
-
  const bookFAQ = await payload.findGlobal({
     slug: 'clients-first-book-faq',
 })

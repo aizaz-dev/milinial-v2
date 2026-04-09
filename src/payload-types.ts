@@ -117,6 +117,7 @@ export interface Config {
     header: Header;
     footer: Footer;
     'book-benefits': BookBenefit;
+    'clients-first-book-benefits': ClientsFirstBookBenefit;
     'book-faq': BookFaq;
     'services-faq': ServicesFaq;
     'how-we-work-faq': HowWeWorkFaq;
@@ -126,6 +127,7 @@ export interface Config {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     'book-benefits': BookBenefitsSelect<false> | BookBenefitsSelect<true>;
+    'clients-first-book-benefits': ClientsFirstBookBenefitsSelect<false> | ClientsFirstBookBenefitsSelect<true>;
     'book-faq': BookFaqSelect<false> | BookFaqSelect<true>;
     'services-faq': ServicesFaqSelect<false> | ServicesFaqSelect<true>;
     'how-we-work-faq': HowWeWorkFaqSelect<false> | HowWeWorkFaqSelect<true>;
@@ -1795,6 +1797,23 @@ export interface BookBenefit {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients-first-book-benefits".
+ */
+export interface ClientsFirstBookBenefit {
+  id: string;
+  eyebrow: string;
+  headline: string;
+  benefits: {
+    icon: 'Megaphone' | 'Zap' | 'ShieldCheck' | 'Network' | 'Search' | 'HandCoins';
+    title: string;
+    description: string;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "book-faq".
  */
 export interface BookFaq {
@@ -1920,6 +1939,25 @@ export interface FooterSelect<T extends boolean = true> {
  * via the `definition` "book-benefits_select".
  */
 export interface BookBenefitsSelect<T extends boolean = true> {
+  eyebrow?: T;
+  headline?: T;
+  benefits?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients-first-book-benefits_select".
+ */
+export interface ClientsFirstBookBenefitsSelect<T extends boolean = true> {
   eyebrow?: T;
   headline?: T;
   benefits?:

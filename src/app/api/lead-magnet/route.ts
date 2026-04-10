@@ -3,7 +3,7 @@ import nodemailer, { TransportOptions } from 'nodemailer'
 
 export async function POST(req: NextRequest) {
   try {
-    const { email } = await req.json()
+    const { email, source } = await req.json()
 
     if (!email) {
       return NextResponse.json({ error: 'E-Mail-Adresse ist erforderlich.' }, { status: 400 })
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
         </div>
         <div style="max-width:600px;margin:30px auto 0;text-align:center;">
           <p style="color:${mutedColor};font-size:13px;line-height:1.6;">
-            <strong>Millennial C</strong><br/>
+            <strong>Millennial C KG</strong><br/>
             CH-5015 Erlinsbach, Solothurn (Schweiz)
           </p>
         </div>
@@ -49,16 +49,27 @@ export async function POST(req: NextRequest) {
       </div>
     `
 
+    // ── Determine book-specific content ────────────────────────────────────────
+    const isClientsFirst = source === 'clients-first'
+
+    const bookName      = isClientsFirst ? 'Clients First' : 'Patients First'
+    const downloadLink  = isClientsFirst
+      ? 'https://drive.proton.me/urls/JVWMF4SWNW#ytRdMpOVCble'
+      : 'https://drive.proton.me/urls/J12707Z21M#PIo1otNVoxbq'
+    const bodyText      = isClientsFirst
+      ? 'Wie versprochen erhalten Sie hier einen exklusiven Einblick in Sprache, Haltung und Werkzeuge wirksamer Führung.'
+      : 'Wie versprochen erhalten Sie hier einen exklusiven Einblick in Sprache, Haltung und Werkzeuge wirksamer, ärztlicher Führung.'
+
     // ── Admin notification ──────────────────────────────────────────────────
     await transporter.sendMail({
       from: `"Lead Magnet" <${process.env.SMTP_FROM}>`,
       to: process.env.SMTP_TO,
-      subject: `🎉 Neuer Lead für "Patience First" Leseprobe`,
+      subject: `🎉 Neuer Lead für "${bookName}" Leseprobe`,
       html: emailWrapper(`
         ${header('Neuer Lead', 'Jemand hat die kostenlose Leseprobe angefordert')}
         <div style="padding:40px;text-align:center;">
           <p style="color:${textColor};font-size:16px;line-height:1.7;margin-top:0;">
-            Eine neue E-Mail-Adresse wurde für die Leseprobe aus dem Buch "Patience First" registriert:
+            Eine neue E-Mail-Adresse wurde für die Leseprobe aus dem Buch "${bookName}" registriert:
           </p>
           <div style="margin:30px 0;padding:20px;background-color:#F8FAFA;border-radius:8px;border:1px solid #E8E9EA;">
             <a href="mailto:${email}" style="color:${brandColor};font-size:20px;font-weight:600;text-decoration:none;">${email}</a>
@@ -68,32 +79,29 @@ export async function POST(req: NextRequest) {
     })
 
     // ── Auto-reply to user (Lead Magnet Delivery) ─────────────────────────────
-    // NOTE: You can attach the actual PDF by adding the `attachments` array to sendMail, 
-    // but for now we provide a nice download link/button.
     await transporter.sendMail({
-      from: `"Patience First" <${process.env.SMTP_FROM}>`,
+      from: `"Millennial C KG" <${process.env.SMTP_FROM}>`,
       to: email,
-      subject: '📚 Ihre kostenlose Leseprobe aus "Patience First" ist da!',
+      subject: `📚 Ihre kostenlose Leseprobe aus "${bookName}" ist da!`,
       html: emailWrapper(`
         ${header(`Ihre Leseprobe`, 'Das erste Kapitel wartet auf Sie.')}
         <div style="padding:40px;">
           <p style="color:${textColor};font-size:16px;line-height:1.7;margin-top:0;margin-bottom:24px;">
-            Vielen Dank für Ihr Interesse an <strong>"Patience First"</strong>.
+            Vielen Dank für Ihr Interesse an <strong>"${bookName}"</strong>.
           </p>
           <p style="color:${textColor};font-size:16px;line-height:1.7;margin-top:0;margin-bottom:32px;">
-            Wie versprochen erhalten Sie hier einen exklusiven Einblick in Sprache, Haltung und Werkzeuge wirksamer, ärztlicher Führung.
+            ${bodyText}
           </p>
           
           <div style="text-align:center;margin:40px 0;">
-            <!-- TODO: Replace "#" with the actual link to your PDF hosted on your site, e.g., "https://millennialc.ch/FreeChapter_PatienceFirst.pdf" -->
-            <a href="#" style="background-color:${brandColor};color:#ffffff;display:inline-block;padding:16px 32px;font-size:16px;font-weight:600;text-decoration:none;border-radius:8px;">
+            <a href="${downloadLink}" target="_blank" rel="noopener noreferrer" style="background-color:${brandColor};color:#ffffff;display:inline-block;padding:16px 32px;font-size:16px;font-weight:600;text-decoration:none;border-radius:8px;">
               Leseprobe herunterladen (PDF)
             </a>
           </div>
 
           <p style="color:${textColor};font-size:16px;line-height:1.7;margin-top:40px;margin-bottom:0;">
             Viel Spass beim Lesen wünscht Ihnen,<br/>
-            <strong style="color:${brandColor};">Das Team von Millennial C</strong>
+            <strong style="color:${brandColor};">Das Team von Millennial C KG</strong>
           </p>
         </div>
       `),

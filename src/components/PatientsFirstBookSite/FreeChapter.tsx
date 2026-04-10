@@ -19,7 +19,7 @@ const PatientsFirstBookFreeChapter = () => {
       const res = await fetch('/api/lead-magnet', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source: 'patients-first' }),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Fehler beim Senden.')
@@ -102,7 +102,7 @@ const PatientsFirstBookFreeChapter = () => {
 
             {/* Subheadline */}
             <p className="font-['Inter',sans-serif] font-medium text-[16px] lg:text-[18px] leading-[140%] lg:leading-[120%] text-[#F1EDED] text-center w-full max-w-[597px] mb-[46px]">
-              E-Mail eintragen, <strong className="font-bold">kostenloses</strong> PDF erhalten: ein schneller Einblick in Sprache, Haltung und Werkzeuge aus „Patience First&quot;.
+              E-Mail eintragen, <strong className="font-bold">kostenloses</strong> PDF erhalten: ein schneller Einblick in Sprache, Haltung und Werkzeuge aus „Patients First&quot;.
             </p>
 
             {/* Opt-in Form & Buttons */}

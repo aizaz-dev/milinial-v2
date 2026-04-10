@@ -55,7 +55,9 @@ const CTA = () => {
 
           {/* Button */}
           <a
-            href="#"
+            href="https://buchshop.bod.de/clients-first-philipp-r-juchli-9783769392340"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-between w-[331px] h-[55px] bg-white rounded-[16px] px-[16px] pr-[8px] shadow-lg group"
           >
             <span className="text-[16px] text-[#1B1B1D]">

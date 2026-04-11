@@ -1,6 +1,7 @@
 import React from 'react'
 import { Megaphone, Zap, ShieldCheck, Network, Search, HandCoins } from 'lucide-react'
-import { BoltIcon, MegaphoneIcon, PuzzleIcon, HandshakeIcon, ShieldCheckIcon, SearchIcon, HierarchyIcon } from './BookIcons'
+import { BoltIcon, MegaphoneIcon, PuzzleIcon, HandshakeIcon, ShieldCheckIcon, SearchIcon, HierarchyIcon, StarIcon, CompassIcon, AwardIcon, ListIcon, TrendingUpIcon, ArrowUpRightIcon } from './BookIcons'
+
 
 import type { LucideProps } from 'lucide-react'
 
@@ -11,8 +12,13 @@ const iconMap: Record<string, React.FC<any>> = {
   Network: HierarchyIcon,
   Search: SearchIcon,
   HandCoins: HandshakeIcon,
+  Star: StarIcon,
+  Compass: CompassIcon,
+  Award: AwardIcon,
+  List: ListIcon,
+  TrendingUp: TrendingUpIcon,
+  ArrowUpRight: ArrowUpRightIcon,
 }
-
 const defaultBenefits = [
   {
     icon: MegaphoneIcon,
@@ -51,7 +57,7 @@ export interface BenefitsProps {
     eyebrow?: string;
     headline?: string;
     benefits?: {
-      icon?: 'Megaphone' | 'Zap' | 'ShieldCheck' | 'Network' | 'Search' | 'HandCoins' | null;
+     icon?: 'Megaphone' | 'Zap' | 'ShieldCheck' | 'Network' | 'Search' | 'HandCoins' | 'Star' | 'Compass' | 'Award' | 'List' | 'TrendingUp' | 'ArrowUpRight' | null;
       title?: string;
       description?: string;
       id?: string | null;

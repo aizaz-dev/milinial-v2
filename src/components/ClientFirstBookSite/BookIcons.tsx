@@ -69,10 +69,10 @@ export const CompassIcon = (props: React.SVGProps<SVGSVGElement>) => (
 )
 
 export const AwardIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <circle cx="12" cy="8" r="6" stroke="currentColor" strokeWidth="2"/>
-    <path d="M15.477 12.89L17 22L12 19L7 22L8.523 12.89" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
+<svg width="10" height="22" viewBox="0 0 10 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.83006 6.75L1.17006 13.894C0.81006 15.444 0.63106 16.218 0.83706 16.946L0.84906 16.989C1.06506 17.714 1.63106 18.267 2.76106 19.374C3.69406 20.287 4.16106 20.744 4.73406 20.75H4.76606C5.34006 20.743 5.80606 20.287 6.73906 19.374C7.86906 18.267 8.43506 17.714 8.65106 16.989L8.66306 16.946C8.86906 16.218 8.68906 15.443 8.32906 13.894L6.67106 6.75M1.47106 4.36C0.91206 3.37 0.63306 2.874 0.79706 2.424C0.96106 1.974 1.48906 1.786 2.54506 1.412L3.44506 1.093C4.09106 0.864 4.41506 0.75 4.75006 0.75C5.08506 0.75 5.40906 0.864 6.05506 1.093L6.95506 1.413C8.01106 1.786 8.53906 1.973 8.70306 2.423C8.86806 2.873 8.58806 3.369 8.02906 4.359L7.51306 5.274C7.24806 5.743 7.11606 5.977 6.88306 6.161C6.65306 6.345 6.43806 6.406 6.00806 6.529C5.59706 6.647 5.12806 6.75 4.75006 6.75C4.37206 6.75 3.90306 6.647 3.49206 6.529C3.06206 6.406 2.84806 6.345 2.61606 6.161C2.38406 5.977 2.25206 5.743 1.98706 5.274L1.47106 4.36Z" stroke="white" stroke-width="1.5"/>
+</svg>
+
 )
 
 export const ListIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -88,7 +88,10 @@ export const TrendingUpIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 export const ArrowUpRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M10 1H17.7725L19 3L17.7725 5H10V1ZM10 8H2.2275L1 10L2.2275 12H10V8Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-  </svg>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2V20.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 4H19.7725L21 6L19.7725 8H12V4ZM12 11H4.2275L3 13L4.2275 15H12V11Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<path d="M8 21H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 )
